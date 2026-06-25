@@ -15,6 +15,7 @@ import MonthlyTrendChart from '../../components/MonthlyTrendChart';
 import AiAdvisorPanel from '../../components/AiAdvisorPanel';
 import PayTuitionForm from '../../components/PayTuitionForm';
 import ErrorBoundary from '../../components/ErrorBoundary';
+import ConnectWallet from '../../components/ConnectWallet';
 
 export default function StudentDashboardPage() {
   const { ready } = useRequireRole('student');
@@ -118,7 +119,10 @@ export default function StudentDashboardPage() {
             <div className="lg:col-span-2 flex flex-col gap-5">
               <AddExpenseForm onSuccess={handleExpenseAdded} />
             </div>
-            <PayTuitionForm universities={universities} onSuccess={handleTuitionPaid} />
+            <div className="flex flex-col gap-5">
+              <ConnectWallet />
+              <PayTuitionForm universities={universities} onSuccess={handleTuitionPaid} />
+            </div>
           </div>
 
           <div className="mb-5">

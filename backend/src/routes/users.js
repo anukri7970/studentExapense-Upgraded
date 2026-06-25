@@ -27,6 +27,26 @@ router.get('/me', authenticate, async (req, res, next) => {
 });
 
 /**
+ * Connect a Freighter wallet to the user's account.
+ */
+router.post('/connect-wallet', authenticate, async (req, res, next) => {
+  try {
+    const { stellarPublicKey } = req.body;
+    if (!stellarPublicKey) return res.status(400).json({ error: 'stellarPublicKey is required.' });
+
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ error: 'User not found.' });
+
+    user.stellarPublicKey = stellarPublicKey;
+    await user.save();
+
+    return res.json({ message: 'Wallet connected successfully.', user: user.toSafeJSON() });
+  } catch (err) {
+    return next(err);
+  }
+});
+
+/**
  * Parent links a student by email. This is a simple MVP "invite" — in a
  * production version this would be a two-sided confirmation flow, but for
  * demoing real fund transfers between two real onboarded users, a direct

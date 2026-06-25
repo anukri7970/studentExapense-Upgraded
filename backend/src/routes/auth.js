@@ -3,8 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
-const { generateKeypair, fundWithFriendbot } = require('../services/stellarService');
-const { encryptSecret } = require('../services/encryption');
+const { fundWithFriendbot } = require('../services/stellarService');
 const { track } = require('../config/analytics');
 
 const router = express.Router();
@@ -19,10 +18,10 @@ function signToken(user) {
 
 router.post('/signup', async (req, res, next) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, stellarPublicKey } = req.body;
 
-    if (!name || !email || !password || !role) {
-      return res.status(400).json({ error: 'name, email, password, and role are all required.' });
+    if (!name || !email || !password || !role || !stellarPublicKey) {
+      return res.status(400).json({ error: 'name, email, password, role, and stellarPublicKey are all required.' });
     }
     if (!['parent', 'student', 'university'].includes(role)) {
       return res.status(400).json({ error: 'role must be one of: parent, student, university.' });
@@ -36,23 +35,19 @@ router.post('/signup', async (req, res, next) => {
     const saltRounds = Number(process.env.BCRYPT_SALT_ROUNDS) || 12;
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
-    const { publicKey, secretKey } = generateKeypair();
-    const stellarSecretEncrypted = encryptSecret(secretKey);
-
     const user = await User.create({
       name,
       email: email.toLowerCase(),
       passwordHash,
       role,
-      stellarPublicKey: publicKey,
-      stellarSecretEncrypted,
+      stellarPublicKey,
     });
 
     // Fund via friendbot in the background-ish; don't block signup success
     // on it, but do report failures clearly so the dashboard can show
     // "wallet pending funding" instead of silently looking broken.
     try {
-      await fundWithFriendbot(publicKey);
+      await fundWithFriendbot(stellarPublicKey);
       user.walletFunded = true;
       await user.save();
     } catch (fundErr) {

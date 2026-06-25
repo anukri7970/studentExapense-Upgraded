@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { signTransaction } from '@stellar/freighter-api';
 import posthog from 'posthog-js';
 import api, { getErrorMessage } from '../lib/api';
 import Panel from './ui/Panel';
@@ -21,10 +22,25 @@ export default function PayTuitionForm({ universities, onSuccess }) {
   const onSubmit = async (values) => {
     setSubmitError('');
     try {
-      const { data } = await api.post('/transactions/pay-tuition', {
+      const { data: buildData } = await api.post('/transactions/pay-tuition/build', {
         universityId: values.universityId,
         amount: Number(values.amount),
       });
+
+      let signedXdr;
+      try {
+        signedXdr = await signTransaction(buildData.xdr, { network: 'TESTNET' });
+      } catch (signErr) {
+        setSubmitError('Transaction signing was cancelled or failed.');
+        return;
+      }
+
+      const { data } = await api.post('/transactions/pay-tuition/submit', {
+        signedXdr,
+        universityId: values.universityId,
+        amount: Number(values.amount),
+      });
+
       posthog.capture('tuition_paid', { amount: Number(values.amount) });
       reset();
       onSuccess(data);

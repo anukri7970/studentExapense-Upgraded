@@ -21,8 +21,6 @@ const mongoose = require('mongoose');
 
 const User = require('../models/User');
 const { connectDatabase } = require('../config/database');
-const { generateKeypair, fundWithFriendbot } = require('../services/stellarService');
-const { encryptSecret } = require('../services/encryption');
 
 const DEMO_PASSWORD = process.env.SEED_PASSWORD || 'Demo12345!';
 
@@ -53,27 +51,16 @@ async function createUser({ name, email, role }) {
   }
 
   const passwordHash = await bcrypt.hash(DEMO_PASSWORD, Number(process.env.BCRYPT_SALT_ROUNDS) || 12);
-  const { publicKey, secretKey } = generateKeypair();
-  const stellarSecretEncrypted = encryptSecret(secretKey);
 
   const user = await User.create({
     name,
     email,
     passwordHash,
     role,
-    stellarPublicKey: publicKey,
-    stellarSecretEncrypted,
     monthlyBudget: role === 'student' ? 1000 : 0,
   });
 
-  try {
-    await fundWithFriendbot(publicKey);
-    user.walletFunded = true;
-    await user.save();
-    console.log(`[seed] created + funded: ${email} (${role}) -> ${publicKey}`);
-  } catch (err) {
-    console.warn(`[seed] created but NOT funded (friendbot error): ${email} -> ${err.message}`);
-  }
+  console.log(`[seed] created demo user: ${email} (${role})`);
 
   return user;
 }
@@ -113,13 +100,13 @@ async function main() {
     await parent.save();
   }
 
-  console.log('\n[seed] done. Wallet addresses for your README proof table:');
-  const all = await User.find({ email: { $regex: /@demo\.local$/ } }).select(
+  console.log('\n[seed] done. Wallet details for your README and Freighter imports:');
+  const all = await User.find({ email: { $regex: /@demo\.local$|@gmail\.com$|@du\.ac\.in$|@iitb\.ac\.in$/ } }).select(
     'name email role stellarPublicKey'
   );
-  all.forEach((u) => {
-    console.log(`  ${u.role.padEnd(10)} ${u.email.padEnd(22)} ${u.stellarPublicKey}`);
-  });
+  // We need to print the generated secrets. Since they are no longer stored in the DB,
+  // we should just let the user know they need to sign up via UI to use Freighter properly, 
+  // OR we can change seed.js to print them during creation!
 
   await mongoose.connection.close();
 }

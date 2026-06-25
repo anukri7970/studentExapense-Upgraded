@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import { isAllowed, setAllowed, requestAccess } from '@stellar/freighter-api';
 import { useAuth } from '../../lib/AuthContext';
 import Panel from '../../components/ui/Panel';
 import Input from '../../components/ui/Input';
@@ -18,6 +19,8 @@ const roles = [
 export default function SignupPage() {
   const { signup } = useAuth();
   const [role, setRole] = useState('student');
+  const [stellarPublicKey, setStellarPublicKey] = useState('');
+  const [isConnectingWallet, setIsConnectingWallet] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const {
     register,
@@ -25,9 +28,33 @@ export default function SignupPage() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async (values) => {
+  const handleConnectWallet = async () => {
     setSubmitError('');
-    const result = await signup({ ...values, role });
+    setIsConnectingWallet(true);
+    try {
+      if (!(await isAllowed())) {
+        await setAllowed();
+      }
+      const access = await requestAccess();
+      if (access.error) {
+        setSubmitError(access.error);
+      } else {
+        setStellarPublicKey(access.address);
+      }
+    } catch (err) {
+      setSubmitError('Failed to connect Freighter wallet. Please ensure the extension is installed and unlocked.');
+    } finally {
+      setIsConnectingWallet(false);
+    }
+  };
+
+  const onSubmit = async (values) => {
+    if (!stellarPublicKey) {
+      setSubmitError('Please connect your Freighter wallet first.');
+      return;
+    }
+    setSubmitError('');
+    const result = await signup({ ...values, role, stellarPublicKey });
     if (!result.ok) setSubmitError(result.message);
   };
 
@@ -39,9 +66,9 @@ export default function SignupPage() {
         </Link>
 
         <Panel className="p-8">
-          <h1 className="font-display text-2xl mb-1">Create your wallet</h1>
+          <h1 className="font-display text-2xl mb-1">Create your account</h1>
           <p className="text-sm text-slate-muted mb-6">
-            A Stellar testnet wallet is generated and funded automatically.
+            Connect your Freighter wallet to receive and send real transactions.
           </p>
 
           <fieldset className="mb-6">
@@ -94,13 +121,33 @@ export default function SignupPage() {
               })}
             />
 
+            <div className="mt-2">
+              <p className="text-sm font-medium text-slate-muted mb-2">Wallet Connection</p>
+              {stellarPublicKey ? (
+                <div className="p-3 bg-ink-raised border border-ink-border rounded-md text-sm text-parchment flex items-center justify-between">
+                  <span className="truncate mr-4">{stellarPublicKey}</span>
+                  <span className="text-emerald-400 font-medium whitespace-nowrap">Connected</span>
+                </div>
+              ) : (
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="w-full"
+                  onClick={handleConnectWallet}
+                  loading={isConnectingWallet}
+                >
+                  Connect Freighter Wallet
+                </Button>
+              )}
+            </div>
+
             {submitError && (
               <p role="alert" className="text-sm text-coral">
                 {submitError}
               </p>
             )}
 
-            <Button type="submit" loading={isSubmitting} className="mt-2 w-full" size="lg">
+            <Button type="submit" loading={isSubmitting} disabled={!stellarPublicKey} className="mt-2 w-full" size="lg">
               Create account
             </Button>
           </form>

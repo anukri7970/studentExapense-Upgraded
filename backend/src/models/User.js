@@ -22,8 +22,7 @@ const userSchema = new Schema(
     },
 
     // Stellar wallet
-    stellarPublicKey: { type: String, required: true, unique: true },
-    stellarSecretEncrypted: { type: String, required: true },
+    stellarPublicKey: { type: String, default: null },
     walletFunded: { type: Boolean, default: false },
 
     // Relationships
