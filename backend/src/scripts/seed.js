@@ -46,11 +46,36 @@ const UNIVERSITIES = [
 async function createUser({ name, email, role }) {
   const existing = await User.findOne({ email });
   if (existing) {
-    console.log(`[seed] skip (already exists): ${email}`);
+    if (role === 'university' && !existing.stellarPublicKey) {
+      const { generateKeypair, fundWithFriendbot } = require('../services/stellarService');
+      const kp = generateKeypair();
+      existing.stellarPublicKey = kp.publicKey;
+      await existing.save();
+      console.log(`[seed] generated wallet for existing university: ${email}`);
+      try {
+        await fundWithFriendbot(existing.stellarPublicKey);
+        console.log(`[seed] funded wallet for: ${email}`);
+      } catch (e) {
+        console.log(`[seed] funding failed for ${email}:`, e.message);
+      }
+    } else {
+      console.log(`[seed] skip (already exists): ${email}`);
+    }
     return existing;
   }
 
   const passwordHash = await bcrypt.hash(DEMO_PASSWORD, Number(process.env.BCRYPT_SALT_ROUNDS) || 12);
+
+  let stellarPublicKey = null;
+  if (role === 'university') {
+    const { generateKeypair, fundWithFriendbot } = require('../services/stellarService');
+    const kp = generateKeypair();
+    stellarPublicKey = kp.publicKey;
+    try {
+      await fundWithFriendbot(stellarPublicKey);
+      console.log(`[seed] funded wallet for new university: ${email}`);
+    } catch (e) {}
+  }
 
   const user = await User.create({
     name,
@@ -58,6 +83,7 @@ async function createUser({ name, email, role }) {
     passwordHash,
     role,
     monthlyBudget: role === 'student' ? 1000 : 0,
+    stellarPublicKey,
   });
 
   console.log(`[seed] created demo user: ${email} (${role})`);
