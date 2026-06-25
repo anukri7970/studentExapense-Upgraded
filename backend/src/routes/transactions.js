@@ -45,7 +45,7 @@ router.post('/deposit/submit', authenticate, requireRole('parent'), async (req, 
   try {
     const { signedXdr, studentId, amount } = req.body;
     const server = getHorizonServer();
-    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET));
+    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, Networks.TESTNET));
     
     const transaction = await Transaction.create({
       type: 'parent_deposit',
@@ -89,7 +89,7 @@ router.post('/release/submit', authenticate, requireRole('student'), async (req,
   try {
     const { signedXdr, parentId, amount } = req.body;
     const server = getHorizonServer();
-    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET));
+    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, Networks.TESTNET));
     
     const transaction = await Transaction.create({
       type: 'student_release',
@@ -118,7 +118,7 @@ router.post('/pay-tuition/build', authenticate, requireRole('student'), async (r
 
     const server = getHorizonServer();
     const account = await server.getAccount(student.stellarPublicKey);
-    const networkPassphrase = process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET;
+    const networkPassphrase = Networks.TESTNET;
 
     const tx = new TransactionBuilder(account, { fee: BASE_FEE, networkPassphrase })
       .addOperation(Operation.payment({ destination: university.stellarPublicKey, asset: Asset.native(), amount: amount.toString() }))
@@ -136,7 +136,7 @@ router.post('/pay-tuition/submit', authenticate, requireRole('student'), async (
   try {
     const { signedXdr, universityId, amount } = req.body;
     const server = getHorizonServer();
-    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET));
+    const result = await server.submitTransaction(TransactionBuilder.fromXDR(signedXdr, Networks.TESTNET));
     
     const transaction = await Transaction.create({
       type: 'tuition_payment',

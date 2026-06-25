@@ -33,8 +33,7 @@ async function buildContractCall(method, scArgs, sourcePublicKey) {
   const sourceAccount = await server.getAccount(sourcePublicKey);
   const contract = getContract();
 
-  const networkPassphrase =
-    process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET;
+  const networkPassphrase = Networks.TESTNET;
 
   let tx = new TransactionBuilder(sourceAccount, {
     fee: BASE_FEE,
@@ -90,8 +89,7 @@ async function getEscrowBalance({ parentPublicKey, studentPublicKey, assetAddres
   const sourceAccount = await server.getAccount(sourcePublicKey);
   const contract = getContract();
 
-  const networkPassphrase =
-    process.env.STELLAR_NETWORK === 'PUBLIC' ? Networks.PUBLIC : Networks.TESTNET;
+  const networkPassphrase = Networks.TESTNET;
 
   const tx = new TransactionBuilder(sourceAccount, {
     fee: BASE_FEE,
