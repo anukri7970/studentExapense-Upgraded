@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { isConnected, setAllowed, requestAccess, signAuthEntry } from '@stellar/freighter-api';
+import { isConnected, setAllowed, requestAccess } from '@stellar/freighter-api';
 import { useAuth } from '../lib/AuthContext';
 import api from '../lib/api';
 import Panel from './ui/Panel';
@@ -50,18 +50,10 @@ export default function ConnectWallet() {
       }
       const publicKey = access.address;
 
-      // Request a signature to prove ownership
-      const challenge = "Verify wallet ownership for Student Expense Wallet: " + Date.now();
-      const signature = await signAuthEntry(challenge);
-      
-      if (signature) {
-        await api.post('/users/connect-wallet', { stellarPublicKey: publicKey });
-        setWalletKey(publicKey);
-        setVerified(true);
-        refresh(); // Refresh user data to get the newly connected wallet everywhere
-      } else {
-        throw new Error('Signature was rejected or failed.');
-      }
+      await api.post('/users/connect-wallet', { stellarPublicKey: publicKey });
+      setWalletKey(publicKey);
+      setVerified(true);
+      refresh(); // Refresh user data to get the newly connected wallet everywhere
       
     } catch (err) {
       setError(err.message || 'Failed to connect wallet');
