@@ -46,17 +46,20 @@ const UNIVERSITIES = [
 async function createUser({ name, email, role }) {
   const existing = await User.findOne({ email });
   if (existing) {
-    if (role === 'university' && !existing.stellarPublicKey) {
-      const { generateKeypair, fundWithFriendbot } = require('../services/stellarService');
-      const kp = generateKeypair();
-      existing.stellarPublicKey = kp.publicKey;
-      await existing.save();
-      console.log(`[seed] generated wallet for existing university: ${email}`);
+    if (role === 'university') {
+      if (!existing.stellarPublicKey) {
+        const { generateKeypair } = require('../services/stellarService');
+        const kp = generateKeypair();
+        existing.stellarPublicKey = kp.publicKey;
+        await existing.save();
+        console.log(`[seed] generated wallet for existing university: ${email}`);
+      }
       try {
+        const { fundWithFriendbot } = require('../services/stellarService');
         await fundWithFriendbot(existing.stellarPublicKey);
-        console.log(`[seed] funded wallet for: ${email}`);
+        console.log(`[seed] ensured wallet is funded for: ${email}`);
       } catch (e) {
-        console.log(`[seed] funding failed for ${email}:`, e.message);
+        console.log(`[seed] funding failed (might already be funded) for ${email}:`, e.message);
       }
     } else {
       console.log(`[seed] skip (already exists): ${email}`);
