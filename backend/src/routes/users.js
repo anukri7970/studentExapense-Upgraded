@@ -28,6 +28,7 @@ router.get('/me', authenticate, async (req, res, next) => {
 
 /**
  * Connect a Freighter wallet to the user's account.
+ * On testnet, also auto-fund via Friendbot if the account has no balance.
  */
 router.post('/connect-wallet', authenticate, async (req, res, next) => {
   try {
@@ -40,11 +41,29 @@ router.post('/connect-wallet', authenticate, async (req, res, next) => {
     user.stellarPublicKey = stellarPublicKey;
     await user.save();
 
-    return res.json({ message: 'Wallet connected successfully.', user: user.toSafeJSON() });
+    // Auto-fund via Friendbot on testnet if account doesn't exist yet
+    let funded = false;
+    try {
+      const checkRes = await fetch(`https://horizon-testnet.stellar.org/accounts/${stellarPublicKey}`);
+      if (!checkRes.ok) {
+        // Account not found — fund it via Friendbot
+        const fbRes = await fetch(`https://friendbot.stellar.org?addr=${encodeURIComponent(stellarPublicKey)}`);
+        funded = fbRes.ok;
+      }
+    } catch (_) {
+      // Non-fatal — wallet connect still succeeds
+    }
+
+    return res.json({
+      message: `Wallet connected successfully.${funded ? ' Funded via Friendbot.' : ''}`,
+      user: user.toSafeJSON(),
+      funded,
+    });
   } catch (err) {
     return next(err);
   }
 });
+
 
 /**
  * Disconnect a Freighter wallet from the user's account.
