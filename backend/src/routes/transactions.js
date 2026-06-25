@@ -117,7 +117,7 @@ router.post('/pay-tuition/build', authenticate, requireRole('student'), async (r
     const university = await User.findById(universityId);
 
     const server = getHorizonServer();
-    const account = await server.getAccount(student.stellarPublicKey);
+    const account = await server.loadAccount(student.stellarPublicKey);
     const networkPassphrase = Networks.TESTNET;
 
     const tx = new TransactionBuilder(account, { fee: BASE_FEE, networkPassphrase })
