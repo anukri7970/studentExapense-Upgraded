@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { isConnected, setAllowed, getPublicKey, signAuthEntry } from '@stellar/freighter-api';
-import { useAuth } from '../../lib/AuthContext';
-import api from '../../lib/api';
+import { useAuth } from '../lib/AuthContext';
+import api from '../lib/api';
 import Panel from './ui/Panel';
 
 export default function ConnectWallet() {
