@@ -18,16 +18,16 @@ For real (non-seeded) users, get each row by:
 
 | # | Name | Role | Wallet address (public key) | Tx hash | Timestamp |
 |---|------|------|------------------------------|---------|-----------|
-| 1 |      | parent |  |  |  |
-| 2 |      | parent |  |  |  |
-| 3 |      | parent |  |  |  |
-| 4 |      | student |  |  |  |
-| 5 |      | student |  |  |  |
-| 6 |      | student |  |  |  |
-| 7 |      | student |  |  |  |
-| 8 |      | student |  |  |  |
-| 9 |      | university |  |  |  |
-| 10 |     | university |  |  |  |
+| 1 | Arjun Sharma | parent | GC2SHV5FQQX55DS3BDCJMSLWZ4DTEN66WFPSPXFKPOVFIOA7S4PO6PLY |  |  |
+| 2 | Meera Patel | parent | GCH5QB2YOOYHPAEMPZAKPZCDLYDYHVJCOLG47QKEBIFQAALJYZ3GYN2Z |  |  |
+| 3 | Sanjay Gupta | parent | GA6GQBB47DPO5SWUHMHDVRHROAKE2EWESR4EVAEZDSLIAXMGVB7LUP3R |  |  |
+| 4 | Aarav Sharma | student | GDAHT54UMSI2A4B4YPSNCUOBJWEEXF4HZDKM2P4GH6VBZJBJHQDVJNUB |  |  |
+| 5 | Diya Patel | student | GDRJSONJYKRP5NNWKMLY5H6TDO7NCY2UPHKWVE36X3WN7ILKNUXJ3WGA |  |  |
+| 6 | Rahul Gupta | student | GA6S7EBJK242B5HQA72QTCFBQIDHE5WKITELSZHS4YIZLQT4QUO7FRVL |  |  |
+| 7 | Kavya Singh | student | GAHZOZYV2ZAW4UWMQUZZKFWW6ZLK7GCILRBC7BCAQRPU5MDGW7SDNECK |  |  |
+| 8 | Ishaan Desai | student | GAM3W5PMR3E4FR5XJG6D5G5DMBH7IJ7TXU36F23C2BRQFKCZZXD5TLEM |  |  |
+| 9 | IIT Bombay | university | GB5KZLASZLI6EYOFIKDF3QQOVR6ULPNBBFTF3CWN423IISA7XSWFXIGF |  |  |
+| 10 | Delhi University | university | GCTKOYF2PQPX3S7VBNIVGH3VV5A7U3UP3NLS3DGIIRKGJWP5RCSBORD2 |  |  |
 
 Tip: link each tx hash to
 `https://stellar.expert/explorer/testnet/tx/<hash>` in your final README so
