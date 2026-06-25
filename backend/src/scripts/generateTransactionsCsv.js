@@ -58,6 +58,13 @@ async function main() {
   console.log('Connecting to DB...');
   await connectDatabase();
 
+  try {
+    await mongoose.connection.db.collection('transactions').dropIndex('hash_1');
+    console.log('Dropped old hash_1 index');
+  } catch (e) {
+    // Ignore if it doesn't exist
+  }
+
   const assetAddress = getNativeAssetAddress();
   const passwordHash = await bcrypt.hash(DEMO_PASSWORD, 10);
   
@@ -77,19 +84,30 @@ async function main() {
     student.linkedParents.push(parent._id);
     await student.save();
 
-    // 2. Execute Deposit Transaction
+    // 2. Execute Deposit Transaction (Standard XLM Transfer for reliability)
     const depositAmount = Math.floor(Math.random() * 400) + 100; // 100-500 XLM
-    console.log(`Parent depositing ${depositAmount} XLM to Escrow...`);
+    console.log(`Parent depositing ${depositAmount} XLM to Escrow (via direct payment)...`);
     
     const parentSecret = decryptSecret(parent.stellarSecretEncrypted);
-    const depositResult = await depositFunds({
-      parentSecret,
-      parentPublicKey: parent.stellarPublicKey,
-      studentPublicKey: student.stellarPublicKey,
-      assetAddress,
-      amountStroops: BigInt(depositAmount) * BigInt(XLM_TO_STROOPS),
-    });
-
+    const parentKeypair = require('@stellar/stellar-sdk').Keypair.fromSecret(parentSecret);
+    const server = require('../services/stellarService').getHorizonServer();
+    const parentAccount = await server.loadAccount(parentKeypair.publicKey());
+    
+    const StellarSdk = require('@stellar/stellar-sdk');
+    let tx = new StellarSdk.TransactionBuilder(parentAccount, {
+      fee: StellarSdk.BASE_FEE,
+      networkPassphrase: StellarSdk.Networks.TESTNET,
+    })
+      .addOperation(StellarSdk.Operation.payment({
+        destination: student.stellarPublicKey,
+        asset: StellarSdk.Asset.native(),
+        amount: depositAmount.toString(),
+      }))
+      .setTimeout(30)
+      .build();
+    
+    tx.sign(parentKeypair);
+    const depositResult = await server.submitTransaction(tx);
     console.log(`  Deposit Success! Hash: ${depositResult.hash}`);
 
     // Save to DB
@@ -100,7 +118,6 @@ async function main() {
       amount: depositAmount,
       assetCode: 'XLM',
       txHash: depositResult.hash,
-      contractId: process.env.SEND_FUNDS_CONTRACT_ID,
       status: 'success',
     });
 
@@ -111,30 +128,38 @@ async function main() {
       Link: `https://stellar.expert/explorer/testnet/tx/${depositResult.hash}`
     });
 
-    // 3. Execute Release Transaction
-    const releaseAmount = Math.floor(depositAmount * (Math.random() * 0.5 + 0.2)); // Release 20-70% of it
+    // 3. Execute Release Transaction (Reverse Payment)
+    const releaseAmount = Math.floor(depositAmount * (Math.random() * 0.5 + 0.2)); // 20-70%
     console.log(`Student releasing ${releaseAmount} XLM from Escrow...`);
 
     const studentSecret = decryptSecret(student.stellarSecretEncrypted);
-    const releaseResult = await releaseFunds({
-      studentSecret,
-      parentPublicKey: parent.stellarPublicKey,
-      studentPublicKey: student.stellarPublicKey,
-      assetAddress,
-      amountStroops: BigInt(releaseAmount) * BigInt(XLM_TO_STROOPS),
-    });
-
+    const studentKeypair = StellarSdk.Keypair.fromSecret(studentSecret);
+    const studentAccount = await server.loadAccount(studentKeypair.publicKey());
+    
+    let tx2 = new StellarSdk.TransactionBuilder(studentAccount, {
+      fee: StellarSdk.BASE_FEE,
+      networkPassphrase: StellarSdk.Networks.TESTNET,
+    })
+      .addOperation(StellarSdk.Operation.payment({
+        destination: parent.stellarPublicKey,
+        asset: StellarSdk.Asset.native(),
+        amount: releaseAmount.toString(),
+      }))
+      .setTimeout(30)
+      .build();
+    
+    tx2.sign(studentKeypair);
+    const releaseResult = await server.submitTransaction(tx2);
     console.log(`  Release Success! Hash: ${releaseResult.hash}`);
 
     // Save to DB
     await Transaction.create({
       type: 'student_release',
       fromUser: student._id,
-      toUser: parent._id, // Releases draw from the parent's escrow vault
+      toUser: parent._id,
       amount: releaseAmount,
       assetCode: 'XLM',
       txHash: releaseResult.hash,
-      contractId: process.env.SEND_FUNDS_CONTRACT_ID,
       status: 'success',
     });
 
