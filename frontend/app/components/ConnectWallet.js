@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { isConnected, setAllowed, getPublicKey, signAuthEntry } from '@stellar/freighter-api';
+import { isConnected, setAllowed, requestAccess, signAuthEntry } from '@stellar/freighter-api';
 import { useAuth } from '../lib/AuthContext';
 import api from '../lib/api';
 import Panel from './ui/Panel';
@@ -44,7 +44,11 @@ export default function ConnectWallet() {
       }
       
       await setAllowed();
-      const publicKey = await getPublicKey();
+      const access = await requestAccess();
+      if (access.error) {
+        throw new Error(access.error);
+      }
+      const publicKey = access.address;
 
       // Request a signature to prove ownership
       const challenge = "Verify wallet ownership for Student Expense Wallet: " + Date.now();
