@@ -51,10 +51,7 @@ router.post('/signup', async (req, res, next) => {
       user.walletFunded = true;
       await user.save();
     } catch (fundErr) {
-      const wrapped = new Error(`Friendbot funding failed for new ${role} wallet: ${fundErr.message}`);
-      wrapped.category = 'wallet';
-      wrapped.statusCode = 502;
-      return next(wrapped);
+      console.error(`Friendbot funding failed for new ${role} wallet: ${fundErr.message}`);
     }
 
     track(user._id.toString(), 'wallet_connected', { role: user.role });
