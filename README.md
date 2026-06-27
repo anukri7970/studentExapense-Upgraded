@@ -127,18 +127,18 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 | 14 | Tara Singh (Student) | Delhi University (University) | 126 XLM | [15ceaff603d9...](https://stellar.expert/explorer/testnet/tx/15ceaff603d915ff0a9d5817f05698609a8b1958a046f71b52ddf7091b6db236) |
 | 15 | Nisha Verma (Student) | IIT Bombay (University) | 110 XLM | [5abf09d6fcbd...](https://stellar.expert/explorer/testnet/tx/5abf09d6fcbd78012a90a31de8db6f3e858af56098dc01575d5b39aef5161401) |
 
-## 8. Level 5: Live Demo & Evidence
+## 8. Level 4: Live Demo & Evidence
 
-- **Deployed URL**: [student-exapense-upgraded.vercel.app](https://student-exapense-upgraded.vercel.app/)
+- **Deployed URL**: [student-xpense-wallet.vercel.app](https://student-xpense-wallet.vercel.app/)
 - **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/13XwQHzmGFWkDgURtCRDpvVY_vBUD2F8E/view?usp=sharing)
 - **Pitch Deck (PPT)**: [StudentXpense Pitch Deck](https://docs.google.com/presentation/d/1iLVWPi4RRfZS1rP2CdgqExs4IZYYd9Nw/edit?usp=drive_link&ouid=114494973489055894068&rtpof=true&sd=true)
 
 ---
 
-## 9. User Growth Metrics (Level 5)
+## 9. User Growth Metrics (Level 4)
 
-- **Total Users Onboarded**: 50+
-- **Real Transactions Processed**: 75+
+- **Total Users Onboarded**: 15+
+- **Real Transactions Processed**: 20+
 - **Average User Satisfaction**: 4.4/5
 - **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform)
 - **Feedback Analysis Data**: [user_feedback_responses.csv](./user_feedback_responses.csv)
@@ -147,7 +147,7 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 
 ## 10. Product Improvements (Based on Real User Feedback)
 
-Based on feedback from our 50+ users, we identified and implemented the following improvements:
+Based on feedback from our early pilot cohort, we identified and implemented the following improvements to hit production quality standards:
 - **Feature 1**: Dark Mode Toggle. Added toggle functionality to improve accessibility. — Commit: [99cb362](https://github.com/anukri7970/studentXpense-upgraded/commit/99cb362)
 - **Feature 2**: Deposit Categorization. Parents can now "tag" deposits (e.g., Rent, Groceries). — Commit: [6f04863](https://github.com/anukri7970/studentXpense-upgraded/commit/6f04863)
 - **Feature 3**: Automated Monthly Allowance. Recurring smart contract funding. — Commit: [c8b26b5](https://github.com/anukri7970/studentXpense-upgraded/commit/c8b26b5)
@@ -180,37 +180,22 @@ Based on feedback from our 50+ users, we identified and implemented the followin
 
 ---
 
-## 12. Level 4 & 5 Final Submission Checklist
+## 12. Level 4 Final Submission Checklist
 
-✅ **User Growth (Level 4/5)**
-- [x] 50+ real users onboarded with wallet addresses
-- [x] Real transaction activity from these users (verifiable on chain)
-- [x] Excel sheet with feedback analysis attached to README
-- [x] Google Form link provided for new user feedback
-
-✅ **Product Improvements**
-- [x] 2-3 new features or major improvements implemented
-- [x] Each improvement has a meaningful git commit with description
-- [x] Features are based on real user feedback (documented)
-- [x] No regressions in existing functionality
-
-✅ **Presentation & Demo**
-- [x] Professional pitch deck (10-12 slides)
-- [x] 1-2 minute demo video showcasing real product walkthrough
-- [x] Both linked in README and submission form
-
-✅ **Technical Standards**
-- [x] 20+ meaningful commits across all improvements
-- [x] Live deployed application (Vercel/Netlify)
-- [x] Updated documentation with roadmap and metrics
-- [x] No broken code or missing dependencies
-
-✅ **GitHub & Submission**
-- [x] Public repo with all files
-- [x] Latest code pushed to main branch
-- [x] Excel feedback sheet in repository
-- [x] README contains all required sections
-- [x] Screenshots of user metrics or transaction activity
+Ensure your project meets all requirements before submitting.
+**Required**:
+- [x] **Public GitHub repository**: This repository is completely public.
+- [x] **README with complete documentation**: You are reading it.
+- [x] **Minimum 15+ meaningful commits**: Yes, we have 60+ meaningful commits pushing the codebase to MVP status.
+- [x] **Live demo link**: Linked in Section 8.
+- [x] **Contract deployment address**: `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
+- [x] **Screenshots showing**:
+  - [x] **Product UI**: Shown in Section 7.
+  - [x] **Mobile responsive design**: Shown in Section 7.
+  - [x] **Analytics or monitoring setup**: Shown in Section 7 (PostHog & Sentry).
+- [x] **Demo video link**: Linked in Section 8.
+- [x] **Proof of 10+ user wallet interactions**: Fully detailed in Section 7 (15 specific transactions).
+- [x] **Basic user feedback summary**: Detailed in Section 10 and via the attached CSVs.
 
 ## Quick start
 
