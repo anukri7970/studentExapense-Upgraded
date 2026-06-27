@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: student-expense-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        sync: false # Set this to your Vercel URL (e.g. https://your-vercel-app.vercel.app)
+      - key: MONGO_URI
+        sync: false # Add your MongoDB connection string in the Render dashboard
+      - key: JWT_SECRET
+        sync: false # Add a secure random string for JWT signing
+      - key: SEND_FUNDS_CONTRACT_ID
+        sync: false # Your deployed Soroban contract ID
+      - key: GEMINI_API_KEY
+        sync: false # For AI Advisor functionality
