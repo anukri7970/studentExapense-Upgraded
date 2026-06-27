@@ -123,7 +123,6 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 
 - **Deployed URL**: [student-xpense-wallet.vercel.app](https://student-xpense-wallet.vercel.app/)
 - **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/13XwQHzmGFWkDgURtCRDpvVY_vBUD2F8E/view?usp=sharing)
-- **Pitch Deck**: [pitch_deck.md](./pitch_deck.md)
 
 ---
 
@@ -140,19 +139,19 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 ## 10. Product Improvements (Based on Real User Feedback)
 
 Based on feedback from our 50+ users, we identified and implemented the following improvements:
-- **Feature 1**: Dark Mode Toggle. Added toggle functionality to improve accessibility. — Commit: [Commit_Hash_Here]
-- **Feature 2**: Deposit Categorization. Parents can now "tag" deposits (e.g., Rent, Groceries). — Commit: [Commit_Hash_Here]
-- **Feature 3**: Automated Monthly Allowance. Recurring smart contract funding. — Commit: [Commit_Hash_Here]
-- **Feature 4**: Export Expense Reports. Download budget reports as PDF. — Commit: [Commit_Hash_Here]
+- **Feature 1**: Dark Mode Toggle. Added toggle functionality to improve accessibility. — Commit: [99cb362](https://github.com/anukri7970/studentXpense-upgraded/commit/99cb362)
+- **Feature 2**: Deposit Categorization. Parents can now "tag" deposits (e.g., Rent, Groceries). — Commit: [6f04863](https://github.com/anukri7970/studentXpense-upgraded/commit/6f04863)
+- **Feature 3**: Automated Monthly Allowance. Recurring smart contract funding. — Commit: [c8b26b5](https://github.com/anukri7970/studentXpense-upgraded/commit/c8b26b5)
+- **Feature 4**: Export Expense Reports. Download budget reports as PDF. — Commit: [e766f4d](https://github.com/anukri7970/studentXpense-upgraded/commit/e766f4d)
 
 ### 📊 User Feedback & Implementation Tracker
 
 | User Name | Wallet Address | Suggested Improvement / Feature | Commit ID / Status |
 | :--- | :--- | :--- | :--- |
-| **Sanjay Kumar** | `GCQ2...` | The UI is bright at night. Can we have a dark mode toggle to make it easier on the eyes? | [`[Commit_Hash_Here]`](#) |
-| **Priya Patel** | `GDB3...` | I want to ensure the money I send is categorized. Can we tag deposits with labels like "Tuition" or "Groceries"? | [`[Commit_Hash_Here]`](#) |
-| **Anil Verma** | `GAF9...` | Sending rent every 1st of the month is repetitive. It would be amazing to have an automated monthly allowance feature. | [`[Commit_Hash_Here]`](#) |
-| **Neha Singh** | `GBX1...` | I need to show my parents my AI budget report off-chain. Please add an export to PDF option. | [`[Commit_Hash_Here]`](#) |
+| **Sanjay Kumar** | `GBKYSKQ7VFVFCAEKEXCOSLZC5RK3EPVDQMLIUQJ3HIUA4TKBOVC7ZQVW` | The UI is bright at night. Can we have a dark mode toggle to make it easier on the eyes? | [`99cb362`](https://github.com/anukri7970/studentXpense-upgraded/commit/99cb362) |
+| **Priya Patel** | `GASTVZNEON3OSJ5R5YOELNWY7O622OYZ74XWOEQJOUAFPFPDBWEM45US` | I want to ensure the money I send is categorized. Can we tag deposits with labels like "Tuition" or "Groceries"? | [`6f04863`](https://github.com/anukri7970/studentXpense-upgraded/commit/6f04863) |
+| **Anil Verma** | `GALXUJI5TIYMUNPJT6Y3FEOYDCXSN3TP5KLRC5VRENJUKUNU67MN67WV` | Sending rent every 1st of the month is repetitive. It would be amazing to have an automated monthly allowance feature. | [`c8b26b5`](https://github.com/anukri7970/studentXpense-upgraded/commit/c8b26b5) |
+| **Neha Singh** | `GDTA4AJE34CXM4BUTPLQVBJYGOM2JZGGJ5TWH5RC6QZVU5H2KIQA4RZJ` | I need to show my parents my AI budget report off-chain. Please add an export to PDF option. | [`e766f4d`](https://github.com/anukri7970/studentXpense-upgraded/commit/e766f4d) |
 
 ---
 
