@@ -80,31 +80,15 @@ contracts/  Soroban (Rust) — the SendFunds escrow contract + tests
 
 ## Product Screenshots
 
-### Parent Dashboard
-- **Dashboard Overview**: Sending funds to student wallets, live balance tracking.
-  ![Parent Dashboard](screenshots/parent_dashboard.png)
-- **Transaction History**: View status of sent transactions.
-  ![Parent Transaction History](screenshots/parents_history.png)
-
-### Student Dashboard
+### Product UI
 - **Dashboard Overview**: Wallet balance, monthly budget, and logged expenses.
-  ![Student Dashboard](screenshots/student_dshboard.png)
-- **AI Budget Advisor**: Contextual, personalized spending guidance.
-  ![Student AI Budget Advisor](screenshots/student_AI_Advisor.png)
-- **Log Expense Form**: Categorized logging of daily expenses.
-  ![Student Log Expense](screenshots/student_log_exoense.png)
-- **Wallet & Expense History**: Tracking incoming transfers and expense history.
-  ![Student Wallet & Expense History](screenshots/student_wallet_and%20expense%20histpry.png)
-
-### University Dashboard
-- **Dashboard Overview**: Real-time receipt tracking of student tuition payments.
-  ![University Dashboard](screenshots/university_dshboard.png)
+  ![Product UI](screenshots/student_dshboard.png)
 
 ### Mobile Responsive Design
 - **Mobile View**: Fully responsive across all devices.
   ![Mobile Design](screenshots/mobile_view.png)
 
-### Analytics and Monitoring
+### Analytics and Monitoring Setup
 - **PostHog & Sentry**: Full telemetry and error monitoring integration.
   ![Analytics](screenshots/analytics_console.png)
 
