@@ -135,13 +135,13 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 
 ---
 
-## 9. User Growth Metrics (Level 4)
+## User Growth Metrics
 
-- **Total Users Onboarded**: 15+
-- **Real Transactions Processed**: 20+
-- **Average User Satisfaction**: 4.4/5
-- **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform)
-- **Feedback Analysis Data**: [user_feedback_responses.csv](./user_feedback_responses.csv)
+- **Total Users Onboarded**: 56 (Verified on testnet)
+- **Real Transactions Processed**: 60+
+- **Average User Satisfaction**: 4.7/5
+- **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform?usp=dialog)
+- **Feedback Analysis Data (Public Excel/CSV)**: [StudentXpense Responses Sheet](https://docs.google.com/spreadsheets/d/1NJnllYSZYwMXiIufWQq_o6pDSZB2Fx1xcfTR8lqzBbw/edit?usp=sharing)
 
 ---
 
