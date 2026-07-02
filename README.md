@@ -9,6 +9,8 @@ Built a production-ready MVP with real users, on Stellar testnet.
 - **Live Platform**: [student-exapense-upgraded.vercel.app](https://student-exapense-upgraded.vercel.app/)
 - **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/13XwQHzmGFWkDgURtCRDpvVY_vBUD2F8E/view?usp=sharing)
 - **Contract:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
+- **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform?usp=dialog)
+- **Feedback Analysis Data**: [StudentXpense Responses Sheet](https://docs.google.com/spreadsheets/d/1NJnllYSZYwMXiIufWQq_o6pDSZB2Fx1xcfTR8lqzBbw/edit?usp=sharing)
 ---
 
 ## Why this exists
@@ -163,39 +165,6 @@ Based on feedback from our early pilot cohort, we identified and implemented the
 | **Neha Singh** | `GDTA4AJE34CXM4BUTPLQVBJYGOM2JZGGJ5TWH5RC6QZVU5H2KIQA4RZJ` | The AI Budget Advisor provides surprisingly practical and accurate advice based on my real spending. It's helped me save a lot! I'd really love a feature that allows me to export these detailed budget reports and expense tracking charts into a PDF format, so I can easily share my off-chain financial summary with my parents. | [`d3107c9`](https://github.com/anukri7970/studentExapense-Upgraded/commit/d3107c9) |
 
 ---
-
-## 11. Future Roadmap
-
-### Phase 1 (Next 3 months)
-- Dark Mode deployment and enhanced styling presets.
-- PDF Export functionalities for budget reports.
-
-### Phase 2 (6-12 months)
-- Automated recurring allowances using Soroban cron schedules.
-- Multi-asset parent deposits (USDC integration).
-
-### Phase 3 (12-24 months)
-- Mobile App release (iOS & Android).
-- API integrations with university tuition portals.
-
----
-
-## 12. Level 4 Final Submission Checklist
-
-Ensure your project meets all requirements before submitting.
-**Required**:
-- [x] **Public GitHub repository**: This repository is completely public.
-- [x] **README with complete documentation**: You are reading it.
-- [x] **Minimum 15+ meaningful commits**: Yes, we have 60+ meaningful commits pushing the codebase to MVP status.
-- [x] **Live demo link**: Linked in Section 8.
-- [x] **Contract deployment address**: `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
-- [x] **Screenshots showing**:
-  - [x] **Product UI**: Shown in Section 7.
-  - [x] **Mobile responsive design**: Shown in Section 7.
-  - [x] **Analytics or monitoring setup**: Shown in Section 7 (PostHog & Sentry).
-- [x] **Demo video link**: Linked in Section 8.
-- [x] **Proof of 10+ user wallet interactions**: Fully detailed in Section 7 (15 specific transactions).
-- [x] **Basic user feedback summary**: Detailed in Section 10 and via the attached CSVs.
 
 ## Quick start
 
