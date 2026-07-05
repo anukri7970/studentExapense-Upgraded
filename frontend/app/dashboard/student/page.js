@@ -91,6 +91,7 @@ export default function StudentDashboardPage() {
     <DashboardShell>
       <h1 className="font-display text-3xl mb-1">Student dashboard</h1>
       <p className="text-slate-muted mb-8">Track spending, settle tuition, get AI guidance.</p>
+      <div className="bg-ink-raised p-4 rounded mb-8 border border-ink-border"><p className="font-medium text-parchment mb-2">Savings Goal</p><div className="w-full bg-ink-base rounded-full h-2.5"><div className="bg-signal-gold h-2.5 rounded-full" style={{width: "45%"}}></div></div></div>
 
       {loading && (
         <div className="grid md:grid-cols-3 gap-5 mb-8">
