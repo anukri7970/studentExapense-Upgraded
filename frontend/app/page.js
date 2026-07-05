@@ -125,7 +125,7 @@ export default function HomePage() {
       </section>
 
       <footer className="max-w-6xl mx-auto px-6 py-10 border-t border-ink-border text-sm text-slate-faint flex items-center justify-between">
-        <span>Built on Stellar testnet for demonstration purposes.</span>
+        <div className="flex gap-4"><span>Built on Stellar testnet for demonstration purposes.</span><Link href="/privacy" className="hover:text-parchment">Privacy</Link><Link href="/terms" className="hover:text-parchment">Terms</Link></div>
         <span className="tabular">No real funds are transferred.</span>
       </footer>
     </main>
