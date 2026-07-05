@@ -11,22 +11,6 @@ This document summarizes the user feedback collected directly from our beta test
 
 Based on the actual responses from our users, we have identified several recurring themes and specific feature requests to improve the platform.
 
-### High-Priority Feature Requests
-- **Request 1:** Parent / Sponsor
-- **Request 2:** Parent / Sponsor
-- **Request 3:** University / Institution
-- **Request 4:** Student
-- **Request 5:** Student
-- **Request 6:** University / Institution
-- **Request 7:** University / Institution
-- **Request 8:** Student
-- **Request 9:** Parent / Sponsor
-- **Request 10:** University / Institution
-- **Request 11:** Student
-- **Request 12:** Student
-- **Request 13:** Parent / Sponsor
-- **Request 14:** Student
-- **Request 15:** Student
 
 ### Implemented Improvements (MVP -> V1)
 To address the community's feedback, we have successfully implemented several of these top requests directly into the `main` branch, including:
