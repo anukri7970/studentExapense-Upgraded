@@ -52,7 +52,7 @@ export default function HomePage() {
             Sign in
           </Link>
           <Link href="/signup">
-            <Button size="sm">Get started</Button>
+            <Button size="sm">Create Free Wallet</Button>
           </Link>
         </div>
       </nav>
