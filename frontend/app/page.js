@@ -45,7 +45,7 @@ export default function HomePage() {
   return (
     <main>
       <nav className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <span className="font-display text-lg tracking-tight">Student Expense Wallet Pro</span>
+        <span className="font-display text-lg tracking-tight">Student Expense Wallet Pro</span><button className="ml-4 text-xs bg-ink-raised px-2 py-1 rounded border border-ink-border">Dark Mode</button> Pro</span>
         <div className="flex items-center gap-3">
           <Link href="/support" className="text-sm text-slate-muted hover:text-parchment transition-colors">Support</Link>
           <Link href="/login" className="text-sm text-slate-muted hover:text-parchment transition-colors">
