@@ -110,6 +110,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <h2 className="font-display text-3xl mb-8">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-medium text-parchment">Is it really free?</h3>
+            <p className="text-sm text-slate-muted mt-2">Yes, for testnet usage it is entirely free.</p>
+          </div>
+          <div>
+            <h3 className="font-medium text-parchment">Is my data secure?</h3>
+            <p className="text-sm text-slate-muted mt-2">All wallet keys are encrypted at rest.</p>
+          </div>
+        </div>
+      </section>
+
       <footer className="max-w-6xl mx-auto px-6 py-10 border-t border-ink-border text-sm text-slate-faint flex items-center justify-between">
         <span>Built on Stellar testnet for demonstration purposes.</span>
         <span className="tabular">No real funds are transferred.</span>
