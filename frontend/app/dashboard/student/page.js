@@ -141,6 +141,7 @@ export default function StudentDashboardPage() {
 
           <div className="grid lg:grid-cols-3 gap-5 mb-5">
             <div className="lg:col-span-2 flex flex-col gap-5">
+              <div className="bg-ink-raised p-4 rounded mb-4 border border-ink-border flex justify-between items-center"><span className="text-sm">Split an expense with roommates?</span><button className="text-xs bg-signal-gold text-ink-base px-2 py-1 rounded">Split Bill Calculator</button></div>
               <AddExpenseForm onSuccess={handleExpenseAdded} />
             </div>
             <div className="flex flex-col gap-5">
