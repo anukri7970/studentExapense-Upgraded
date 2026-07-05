@@ -76,7 +76,7 @@ export default function HomePage() {
               I already have an account →
             </Link>
             <Link href="/tutorial" className="text-sm text-signal-gold hover:underline transition-colors flex items-center">
-              Watch Tutorial
+              Start Interactive Tutorial
             </Link>
           </div>
         </div>
