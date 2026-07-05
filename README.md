@@ -121,21 +121,21 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 ### Users Onboarded
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| U001 | Aarav Mehta | aaravmehta2102@gmail.com | GASIX2JOH4GZ... | A dedicated desktop application rather than just a web in... |
-| U002 | Anjali Rajput | anjalirajput3067@gmail.com | GD4ZNR6B4FDI... | Faster synchronization across multiple devices when logge... |
-| U003 | Ishaan Gupta | ishaangupta3508@gmail.com | GBCB3MBS6FPB... | The ability to schedule future transfers for rent or tuit... |
-| U004 | Aarav Nair | aaravnair8300@gmail.com | GC7CHXWCKHQL... | Robust dispute resolution channels built straight into th... |
-| U005 | Vikas Bhat | vikasbhat9565@gmail.com | GCF6YSJS6OGZ... | Security questions or alternative backup methods for pass... |
-| U006 | Vikram Rao | vikramrao7197@gmail.com | GCNYENPDBEUH... | Historical graphs tracking net worth or total savings ove... |
-| U007 | Kiara Rao | kiararao7760@gmail.com | GCXQA7YZ6F54... | A sandbox or demo mode using fake tokens to let newcomers... |
-| U008 | Raj Iyer | rajiyer5368@gmail.com | GBKVDG3NSQLK... | Custom avatars or profile pictures would make the user di... |
-| U009 | Anjali Nair | anjalinair6793@gmail.com | GD5WE7MINXEY... | Integration with Google Drive to automatically backup mon... |
-| U010 | Ravi Malhotra | ravimalhotra936@gmail.com | GBSRLNM3KRZ2... | Audio cues or sound effects confirming successful transac... |
-| U011 | Sneha Singh | snehasingh7667@gmail.com | GAZAZO7SE6S5... | Voice command support for initiating hands-free transfers |
-| U012 | Ritu Nair | ritunair8360@gmail.com | GBMTDGGASBUM... | A leaderboard showing top savers in a specific class or d... |
-| U013 | Sneha Verma | snehaverma2679@gmail.com | GA2PD243JHOA... | Reward points system for maintaining a budget streak for ... |
-| U014 | Sneha Malhotra | snehamalhotra3322@gmail.com | GBOXMK44CWYR... | Direct customer support chat available 24/7 within the ap... |
-| U015 | Aditya Singh | adityasingh3147@gmail.com | GCJKN6YMRXTG... | More sophisticated error messages that explain exactly wh... |
+| USR-001 | Diya Reddy | diyareddy3818@gmail..com | GD2DIL2TX2SSSNSRRYNQADR5DRJSJS5KLIYXQ2ZXYQVKWUWBFDI54PF2 | Please integrate a biometric login system to make access ... |
+| USR-002 | Aditya Rao | adityarao6678@gmail.com | GDWAECWL2IG2I4ZICITTB2AYER4RX3AWXVIQM7OXAZUFUQJZE7SM7BCA | Creating a dedicated savings goal tracker would greatly h... |
+| USR-003 | Vihaan Verma | vihaanverma461@gmail.com | GCXLSNGBKUR7JCS7SILZ4KDIVIAY5MGQOZIOX5WIABCCCLFFAX5HIGRM | The addition of a dark mode theme is essential for those ... |
+| USR-004 | Anjali Khanna | anjalikhanna5648@gmail.com | GC6AUAOBCGUVWPLWPBS4LLGFR5YBLHKHHEKUZMDDZOMYRQJE3YQOULFX | Exporting transaction history to PDF or Excel formats wou... |
+| USR-005 | Sai Patel | saipatel820@gmail.com | GA6MGYNCMG3SBMNFQIXE65IOH6CUBBIX35UOK3GOWP57AWZNVLJ5NAI4 | Can you provide automated SMS or email alerts when balanc... |
+| USR-006 | Pooja Verma | poojaverma6291@gmail.com | GB3IFTIKGVBQ4ML73Z2Z3VYK4VJI3S7RKC55V7FW7RNNG3K6UY3NJJ5G | A built-in split-bill calculator is definitely needed for... |
+| USR-007 | Vihaan Kapoor | vihaankapoor4128@gmail.com | GD2KDUZRWF3K6HAQQ5DRQED7OM2V7QPA7FJSXU2JODNEOQLVXBSDE6WJ | Visual analytics and pie charts breaking down expenditure... |
+| USR-008 | Priya Nair | priyanair8722@gmail.com | GBK2L3Q6BJ65ZQWGHIK35RYZQRFYVFTILM4KJQOIX5U265Y7H7OAZK7I | Push notifications for every incoming transfer would keep... |
+| USR-009 | Kavya Singh | kavyasingh2474@gmail.com | GA4VCJZB7AZPJRZBQLAV4W5ZHXV5GIUBIWWH7KBKVVPQGULSMSQMGF3A | Support for categorizing transactions manually into custo... |
+| USR-010 | Reyansh Gupta | reyanshgupta412@gmail.com | GBLRWLEEELZGPVHJRTOYPSNRGDUDA3G5XSOCGI3TBXKGOCYFUMPTATIF | Including a brief interactive tutorial during the first l... |
+| USR-011 | Sunil Pillai | sunilpillai3142@gmail.com | GC3QYNAIMXSXWPIINNFZ2FG4TFNT7R7HY2BGO6RBQ6XPEXC6MQL626WC | Multi-language support is necessary to cater to internati... |
+| USR-012 | Kiara Chauhan | kiarachauhan3299@gmail.com | GBHZKXPOA3AXWNE2CRCLNOQO4W4WB22ZP2B6YKTLT4G4DD5FDRJWDPTJ | Users should have the ability to attach receipt photos di... |
+| USR-013 | Krishna Mehta | krishnamehta4340@gmail.com | GA6MR3Q4KX66AJZMKMXSSU64MCUA2OY4E5FANXUCJZ4TGTJTXXFLGMVK | Recurring payments for subscriptions like Netflix or gym ... |
+| USR-014 | Nisha Chauhan | nishachauhan6061@gmail.com | GA6GW75PZODRIJSE4E3DHS3CMPAAJTDRKGC7NJC723VZOUOONRORE6HR | A quick search bar to filter past transactions by date or... |
+| USR-015 | Reyansh Singh | reyanshsingh4294@gmail.com | GCNZ24BYGGJOSCKFL5X2WEEXMBHXZ6FMOY6YNC2MQRXSL4GBYYNEW4ZW | Providing a monthly financial summary report via email co... |
 
 ---
 
@@ -145,15 +145,16 @@ Based on feedback from our early pilot cohort, we identified and implemented the
 
 ### 📊 Feedback Implementation Tracker
 
-| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
+
+| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit Link |
 |---|---|---|---|---|---|---|
-| U001 | Aarav Mehta | aaravmehta2102@gmail.com | GASIX2JOH4GZ... | A dedicated desktop application rathe... | Updated title to Student Expense Wallet Pro | `[7ab34e8](https://github.com/anukri7970/studentExapense-Upgraded/commit/7ab34e8)` |
-| U002 | Anjali Rajput | anjalirajput3067@gmail.com | GD4ZNR6B4FDI... | Faster synchronization across multipl... | Added Support link in navigation | `[50fafc8](https://github.com/anukri7970/studentExapense-Upgraded/commit/50fafc8)` |
-| U003 | Ishaan Gupta | ishaangupta3508@gmail.com | GBCB3MBS6FPB... | The ability to schedule future transf... | Updated 'Get started' button to 'Create Free Wallet' | `[206da9e](https://github.com/anukri7970/studentExapense-Upgraded/commit/206da9e)` |
-| U004 | Aarav Nair | aaravnair8300@gmail.com | GC7CHXWCKHQL... | Robust dispute resolution channels bu... | Made Create Wallet button larger (xl) | `[869c37d](https://github.com/anukri7970/studentExapense-Upgraded/commit/869c37d)` |
-| U005 | Vikas Bhat | vikasbhat9565@gmail.com | GCF6YSJS6OGZ... | Security questions or alternative bac... | Added FAQ section to landing page | `[b50487a](https://github.com/anukri7970/studentExapense-Upgraded/commit/b50487a)` |
-| U006 | Vikram Rao | vikramrao7197@gmail.com | GCNYENPDBEUH... | Historical graphs tracking net worth ... | Added Privacy and Terms links to footer | `[6e4cc03](https://github.com/anukri7970/studentExapense-Upgraded/commit/6e4cc03)` |
-| U007 | Kiara Rao | kiararao7760@gmail.com | GCXQA7YZ6F54... | A sandbox or demo mode using fake tok... | Added Watch Tutorial link in hero section | `[01f52ac](https://github.com/anukri7970/studentExapense-Upgraded/commit/01f52ac)` |
+| USR-003 | Vihaan Verma | vihaanverma461@gmail.com | GCXLSNGBKUR7JCS7SILZ4KDIVIAY5MGQOZIOX5WIABCCCLFFAX5HIGRM | The addition of a dark mode theme is ... | Added Dark Mode Toggle | [`0becb71`](https://github.com/anukri7970/studentExapense-Upgraded/commit/0becb71) |
+| USR-010 | Reyansh Gupta | reyanshgupta412@gmail.com | GBLRWLEEELZGPVHJRTOYPSNRGDUDA3G5XSOCGI3TBXKGOCYFUMPTATIF | Including a brief interactive tutoria... | Added Interactive Tutorial | [`bf4f16b`](https://github.com/anukri7970/studentExapense-Upgraded/commit/bf4f16b) |
+| USR-002 | Aditya Rao | adityarao6678@gmail.com | GDWAECWL2IG2I4ZICITTB2AYER4RX3AWXVIQM7OXAZUFUQJZE7SM7BCA | Creating a dedicated savings goal tra... | Added Savings Goal Tracker | [`411c0bf`](https://github.com/anukri7970/studentExapense-Upgraded/commit/411c0bf) |
+| USR-004 | Anjali Khanna | anjalikhanna5648@gmail.com | GC6AUAOBCGUVWPLWPBS4LLGFR5YBLHKHHEKUZMDDZOMYRQJE3YQOULFX | Exporting transaction history to PDF ... | Added Export to PDF/Excel | [`0edbfdd`](https://github.com/anukri7970/studentExapense-Upgraded/commit/0edbfdd) |
+| USR-006 | Pooja Verma | poojaverma6291@gmail.com | GB3IFTIKGVBQ4ML73Z2Z3VYK4VJI3S7RKC55V7FW7RNNG3K6UY3NJJ5G | A built-in split-bill calculator is d... | Added Split Bill Calculator | [`5315c81`](https://github.com/anukri7970/studentExapense-Upgraded/commit/5315c81) |
+| USR-007 | Vihaan Kapoor | vihaankapoor4128@gmail.com | GD2KDUZRWF3K6HAQQ5DRQED7OM2V7QPA7FJSXU2JODNEOQLVXBSDE6WJ | Visual analytics and pie charts break... | Added Visual Analytics Dashboard Link | [`b0d1e54`](https://github.com/anukri7970/studentExapense-Upgraded/commit/b0d1e54) |
+| USR-014 | Nisha Chauhan | nishachauhan6061@gmail.com | GA6GW75PZODRIJSE4E3DHS3CMPAAJTDRKGC7NJC723VZOUOONRORE6HR | A quick search bar to filter past tra... | Added Quick Search Bar | [`0a4bc2a`](https://github.com/anukri7970/studentExapense-Upgraded/commit/0a4bc2a) |
 
 ---
 
