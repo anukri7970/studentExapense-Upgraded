@@ -158,6 +158,7 @@ export default function StudentDashboardPage() {
 
           <Panel className="p-6 mb-5">
             <div className="flex justify-between items-center mb-4"><p className="font-display text-lg">Wallet transaction history</p><button className="text-xs bg-ink-raised px-2 py-1 rounded border border-ink-border">Export to PDF</button></div>
+            <input type="text" placeholder="Search past transactions by date or merchant..." className="w-full mb-4 bg-ink-base border border-ink-border p-2 rounded text-sm text-parchment" />
             <TransactionList
               transactions={incomingTxns}
               emptyTitle="No wallet transactions yet"
