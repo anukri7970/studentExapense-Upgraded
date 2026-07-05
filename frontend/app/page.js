@@ -70,7 +70,7 @@ export default function HomePage() {
           </p>
           <div className="flex items-center gap-4">
             <Link href="/signup">
-              <Button size="lg">Create your wallet</Button>
+              <Button size="xl" className="bg-signal-gold text-ink-base">Create your free wallet</Button>
             </Link>
             <Link href="/login" className="text-sm text-slate-muted hover:text-parchment transition-colors">
               I already have an account →
