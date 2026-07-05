@@ -11,7 +11,7 @@ Built a production-ready MVP with real users, on Stellar testnet.
 - **Pitch Deck (PPT)**: [StudentXpense Pitch Deck](https://docs.google.com/presentation/d/1iLVWPi4RRfZS1rP2CdgqExs4IZYYd9Nw/edit?usp=drive_link&ouid=114494973489055894068&rtpof=true&sd=true)
 - **Contract:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
  - **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform?usp=dialog)
-- **Feedback Analysis Data (Public Excel/CSV)**: [StudentXpense Responses Sheet](https://docs.google.com/spreadsheets/d/1NJnllYSZYwMXiIufWQq_o6pDSZB2Fx1xcfTR8lqzBbw/edit?usp=sharing)
+- **Feedback Analysis Data**: [StudentXpense Responses Sheet Link](https://docs.google.com/spreadsheets/d/1NJnllYSZYwMXiIufWQq_o6pDSZB2Fx1xcfTR8lqzBbw/edit?usp=sharing)
 ---
 
 ## Why this exists
