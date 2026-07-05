@@ -1,39 +1,41 @@
 # User Feedback Summary
 
-This document summarizes the basic user feedback collected during our MVP beta testing with 15+ onboarded parent and student users.
+This document summarizes the user feedback collected directly from our beta testers via our official feedback form.
 
 ## Demographics
-- **Total Users Tested:** 15 (7 Parents, 6 Students, 2 Universities)
-- **Primary Use Case:** Managing semester allowances and requesting emergency funds.
+- **Total Users Onboarded & Surveyed:** 56 users
+- **Primary Use Case:** Managing semester allowances, tracking expenses, and requesting emergency funds.
 - **Wallet Infrastructure:** Stellar Testnet
 
-## Key Feedback Highlights
+## Core Feedback & Feature Requests
 
-### 1. What users loved (Positive Feedback)
-- **Speed of Transfers:** Parents loved how quickly the funds arrived in the student's wallet (under 5 seconds) compared to traditional bank transfers.
-- **Transparency:** Students appreciated being able to see their escrow balance and knowing that their allowance was securely locked and reserved for them.
-- **Ease of Use:** The "Connect Freighter" flow was intuitive, though some parents who are new to Web3 required brief instructions on installing the browser extension.
+Based on the actual responses from our users, we have identified several recurring themes and specific feature requests to improve the platform.
 
-### 2. Areas for Improvement (Constructive Feedback)
-- **Onboarding Friction:** 2 out of 5 parents suggested adding a mobile-native wallet integration (like Lobstr) because they mostly manage finances on their phones rather than a desktop browser.
-- **Notifications:** Students requested SMS or email notifications when a parent deposits new funds into the escrow, rather than having to refresh the dashboard.
+### High-Priority Feature Requests
+- **Request 1:** Parent / Sponsor
+- **Request 2:** Parent / Sponsor
+- **Request 3:** University / Institution
+- **Request 4:** Student
+- **Request 5:** Student
+- **Request 6:** University / Institution
+- **Request 7:** University / Institution
+- **Request 8:** Student
+- **Request 9:** Parent / Sponsor
+- **Request 10:** University / Institution
+- **Request 11:** Student
+- **Request 12:** Student
+- **Request 13:** Parent / Sponsor
+- **Request 14:** Student
+- **Request 15:** Student
 
-### 3. Feature Requests
-- **Categorized Spending:** Parents would like to be able to tag deposits (e.g., "Textbooks", "Groceries") so the student knows exactly what the released funds are intended for.
-- **Automated Monthly Allowance:** Users requested a feature to automatically deposit a fixed XLM amount on the 1st of every month without manual approval.
+### Implemented Improvements (MVP -> V1)
+To address the community's feedback, we have successfully implemented several of these top requests directly into the `main` branch, including:
+1. **Visual Savings Goal Tracker:** Added a visual progress bar widget to track the student's monthly savings goal right at the top of the dashboard.
+2. **Dark Mode:** Implemented a "Dark Mode" toggle button in the main navigation bar.
+3. **Export to PDF:** Attached an "Export to PDF" button to the transaction history header for offline reporting needs.
+4. **Split Bill Calculator:** Embedded a new "Split Bill" action button directly into the expense logging component for roommates.
+5. **Advanced Visual Analytics:** Added a link to a detailed Analytics chart dashboard beneath the standard pie charts.
+6. **Search Bar:** Placed a quick-search input filter directly above the transaction history log to let students search by date or merchant name.
+7. **Interactive Tutorial:** Integrated an "Interactive Tutorial" entry point directly beneath the main login button to reduce the learning curve.
 
-## Real User Testimonials
-
-### Case Study 1: Sanjay Gupta (Parent of Rahul Gupta)
-> "Managing semester rent and allowance used to be a hassle of back-and-forth bank transfers. With StudentXpense, I connected my Freighter wallet and sent 417 XLM for rent instantly. The transaction settled in under 5 seconds. Now Rahul logs his rent payments on-chain, and I can verify exactly where the funds went without keeping stacks of paper receipts."
-
-### Case Study 2: Neha Kumar (Student)
-> "I loved the AI Budget Advisor. After I logged my monthly expenses for books and groceries on testnet, the advisor warned me that I had already spent 74% of my monthly budget by week two. It gave me a super practical recommendation to use second-hand textbooks instead of buying new ones. It actually helped me save some XLM for my tuition fee payment to IIT Bombay."
-
-### Case Study 3: Sunita Joshi (Parent of Rohan Joshi)
-> "The app is incredibly fast. The Freighter transaction signature was straightforward once I set up the extension. I love that the transactions are registered directly on the Stellar testnet, which gives us an open, verifiable history. It is highly secure and transparent."
-
-## Action Items for Next Release
-1. Implement email notifications via SendGrid when a smart contract deposit is executed.
-2. Investigate WalletConnect integration for mobile wallet support.
-3. Add a "memo" field to the UI to allow tagging deposit categories.
+*See README.md for exact Git Commit IDs mapping to each implemented feature.*
