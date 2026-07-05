@@ -155,7 +155,7 @@ export default function StudentDashboardPage() {
           </div>
 
           <Panel className="p-6 mb-5">
-            <p className="font-display text-lg mb-4">Wallet transaction history</p>
+            <div className="flex justify-between items-center mb-4"><p className="font-display text-lg">Wallet transaction history</p><button className="text-xs bg-ink-raised px-2 py-1 rounded border border-ink-border">Export to PDF</button></div>
             <TransactionList
               transactions={incomingTxns}
               emptyTitle="No wallet transactions yet"
