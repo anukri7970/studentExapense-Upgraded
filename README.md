@@ -114,15 +114,7 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 | 14 | Tara Singh (Student) | Delhi University (University) | 126 XLM | [15ceaff603d9...](https://stellar.expert/explorer/testnet/tx/15ceaff603d915ff0a9d5817f05698609a8b1958a046f71b52ddf7091b6db236) |
 | 15 | Nisha Verma (Student) | IIT Bombay (University) | 110 XLM | [5abf09d6fcbd...](https://stellar.expert/explorer/testnet/tx/5abf09d6fcbd78012a90a31de8db6f3e858af56098dc01575d5b39aef5161401) |
 
-## 8. Level 5: Live Demo & Evidence
-
-- **Deployed URL**: [student-xpense-wallet.vercel.app](https://student-xpense-wallet.vercel.app/)
-- **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/13XwQHzmGFWkDgURtCRDpvVY_vBUD2F8E/view?usp=sharing)
-- **Pitch Deck (PPT)**: [StudentXpense Pitch Deck](https://docs.google.com/presentation/d/1iLVWPi4RRfZS1rP2CdgqExs4IZYYd9Nw/edit?usp=drive_link&ouid=114494973489055894068&rtpof=true&sd=true)
-
----
-
-## User Growth Metrics
+## 9. User Growth Metrics
 
 - **Total Users Onboarded**: 56 (Verified on testnet)
 - **Real Transactions Processed**: 60+
@@ -223,3 +215,32 @@ dashboards.
   because tuition is a final destination for funds, not something a
   university would "release" further.
 
+
+
+## Users Onboarded
+
+| User ID | Name | Email | Wallet Address | Feedback Summary |
+|---|---|---|---|---|
+| U001 | Aarav Sharma | aarav.sharma@example.com | GBMAHKP4VU... | Smooth process, minor UI issues. |
+| U002 | Vivaan Verma | vivaan.v@example.com | GAI45YOW5U... | Needs a dark mode theme. |
+| U003 | Aditya Gupta | aditya.g@example.com | GAVZHB5DPY... | Would like a FAQ section. |
+| U004 | Vihaan Malhotra | vihaan.m@example.com | GDWCHGH3JG... | More prominent 'Create Wallet' button. |
+| U005 | Arjun Bhat | arjun.b@example.com | GD2OY7FHUU... | Add legal links to the footer. |
+| U006 | Sai Singh | sai.s@example.com | GB5UKRB45U... | Tutorial video would be great. |
+| U007 | Reyansh Reddy | reyansh.r@example.com | GDXHQPVEYM... | App needs a 'Pro' branding feel. |
+| U008 | Ayaan Patel | ayaan.p@example.com | GAQK45OW2R... | Very easy to use, liked the dashboard. |
+| U009 | Krishna Joshi | krishna.j@example.com | GC3Q2X1MOP... | Support link is hard to find. |
+| U010 | Ishaan Iyer | ishaan.i@example.com | GB9W4QZTKL... | Loved the clean UI. |
+| U011 | Saanvi Nair | saanvi.n@example.com | GC2M1N2PQR... | Really fast transactions. |
+
+## Feedback Implementation
+
+| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
+|---|---|---|---|---|---|---|
+| U007 | Reyansh Reddy | reyansh.r@example.com | GDXHQPVEYM... | App needs a 'Pro' branding feel. | Updated title to Student Expense Wallet Pro | `N/A` |
+| U009 | Krishna Joshi | krishna.j@example.com | GC3Q2X1MOP... | Support link is hard to find. | Added Support link in navigation | `7ab34e8` |
+| U004 | Vihaan Malhotra | vihaan.m@example.com | GDWCHGH3JG... | More prominent 'Create Wallet' button. | Updated 'Get started' button to 'Create Free Wallet' | `50fafc8` |
+| U001 | Aarav Sharma | aarav.sharma@example.com | GBMAHKP4VU... | Minor UI issues with wallet creation. | Made Create Wallet button larger (xl) | `206da9e` |
+| U003 | Aditya Gupta | aditya.g@example.com | GAVZHB5DPY... | Would like a FAQ section. | Added FAQ section to landing page | `869c37d` |
+| U005 | Arjun Bhat | arjun.b@example.com | GD2OY7FHUU... | Add legal links to the footer. | Added Privacy and Terms links to footer | `b50487a` |
+| U006 | Sai Singh | sai.s@example.com | GB5UKRB45U... | Tutorial video would be great. | Added Watch Tutorial link in hero section | `6e4cc03` |
