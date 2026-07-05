@@ -75,6 +75,9 @@ export default function HomePage() {
             <Link href="/login" className="text-sm text-slate-muted hover:text-parchment transition-colors">
               I already have an account →
             </Link>
+            <Link href="/tutorial" className="text-sm text-signal-gold hover:underline transition-colors flex items-center">
+              Watch Tutorial
+            </Link>
           </div>
         </div>
 
