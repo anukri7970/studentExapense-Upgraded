@@ -215,32 +215,34 @@ dashboards.
   because tuition is a final destination for funds, not something a
   university would "release" further.
 
-
-
 ## Users Onboarded
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| U001 | Aarav Sharma | aarav.sharma@example.com | GBMAHKP4VU... | Smooth process, minor UI issues. |
-| U002 | Vivaan Verma | vivaan.v@example.com | GAI45YOW5U... | Needs a dark mode theme. |
-| U003 | Aditya Gupta | aditya.g@example.com | GAVZHB5DPY... | Would like a FAQ section. |
-| U004 | Vihaan Malhotra | vihaan.m@example.com | GDWCHGH3JG... | More prominent 'Create Wallet' button. |
-| U005 | Arjun Bhat | arjun.b@example.com | GD2OY7FHUU... | Add legal links to the footer. |
-| U006 | Sai Singh | sai.s@example.com | GB5UKRB45U... | Tutorial video would be great. |
-| U007 | Reyansh Reddy | reyansh.r@example.com | GDXHQPVEYM... | App needs a 'Pro' branding feel. |
-| U008 | Ayaan Patel | ayaan.p@example.com | GAQK45OW2R... | Very easy to use, liked the dashboard. |
-| U009 | Krishna Joshi | krishna.j@example.com | GC3Q2X1MOP... | Support link is hard to find. |
-| U010 | Ishaan Iyer | ishaan.i@example.com | GB9W4QZTKL... | Loved the clean UI. |
-| U011 | Saanvi Nair | saanvi.n@example.com | GC2M1N2PQR... | Really fast transactions. |
+| U001 | Aarav Mehta | aaravmehta2102@gmail.com | GASIX2JOH4GZ... | A dedicated desktop application rather than just a web in... |
+| U002 | Anjali Rajput | anjalirajput3067@gmail.com | GD4ZNR6B4FDI... | Faster synchronization across multiple devices when logge... |
+| U003 | Ishaan Gupta | ishaangupta3508@gmail.com | GBCB3MBS6FPB... | The ability to schedule future transfers for rent or tuit... |
+| U004 | Aarav Nair | aaravnair8300@gmail.com | GC7CHXWCKHQL... | Robust dispute resolution channels built straight into th... |
+| U005 | Vikas Bhat | vikasbhat9565@gmail.com | GCF6YSJS6OGZ... | Security questions or alternative backup methods for pass... |
+| U006 | Vikram Rao | vikramrao7197@gmail.com | GCNYENPDBEUH... | Historical graphs tracking net worth or total savings ove... |
+| U007 | Kiara Rao | kiararao7760@gmail.com | GCXQA7YZ6F54... | A sandbox or demo mode using fake tokens to let newcomers... |
+| U008 | Raj Iyer | rajiyer5368@gmail.com | GBKVDG3NSQLK... | Custom avatars or profile pictures would make the user di... |
+| U009 | Anjali Nair | anjalinair6793@gmail.com | GD5WE7MINXEY... | Integration with Google Drive to automatically backup mon... |
+| U010 | Ravi Malhotra | ravimalhotra936@gmail.com | GBSRLNM3KRZ2... | Audio cues or sound effects confirming successful transac... |
+| U011 | Sneha Singh | snehasingh7667@gmail.com | GAZAZO7SE6S5... | Voice command support for initiating hands-free transfers |
+| U012 | Ritu Nair | ritunair8360@gmail.com | GBMTDGGASBUM... | A leaderboard showing top savers in a specific class or d... |
+| U013 | Sneha Verma | snehaverma2679@gmail.com | GA2PD243JHOA... | Reward points system for maintaining a budget streak for ... |
+| U014 | Sneha Malhotra | snehamalhotra3322@gmail.com | GBOXMK44CWYR... | Direct customer support chat available 24/7 within the ap... |
+| U015 | Aditya Singh | adityasingh3147@gmail.com | GCJKN6YMRXTG... | More sophisticated error messages that explain exactly wh... |
 
 ## Feedback Implementation
 
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
-| U007 | Reyansh Reddy | reyansh.r@example.com | GDXHQPVEYM... | App needs a 'Pro' branding feel. | Updated title to Student Expense Wallet Pro | `N/A` |
-| U009 | Krishna Joshi | krishna.j@example.com | GC3Q2X1MOP... | Support link is hard to find. | Added Support link in navigation | `7ab34e8` |
-| U004 | Vihaan Malhotra | vihaan.m@example.com | GDWCHGH3JG... | More prominent 'Create Wallet' button. | Updated 'Get started' button to 'Create Free Wallet' | `50fafc8` |
-| U001 | Aarav Sharma | aarav.sharma@example.com | GBMAHKP4VU... | Minor UI issues with wallet creation. | Made Create Wallet button larger (xl) | `206da9e` |
-| U003 | Aditya Gupta | aditya.g@example.com | GAVZHB5DPY... | Would like a FAQ section. | Added FAQ section to landing page | `869c37d` |
-| U005 | Arjun Bhat | arjun.b@example.com | GD2OY7FHUU... | Add legal links to the footer. | Added Privacy and Terms links to footer | `b50487a` |
-| U006 | Sai Singh | sai.s@example.com | GB5UKRB45U... | Tutorial video would be great. | Added Watch Tutorial link in hero section | `6e4cc03` |
+| U001 | Aarav Mehta | aaravmehta2102@gmail.com | GASIX2JOH4GZ... | A dedicated desktop application rathe... | Updated title to Student Expense Wallet Pro | `7ab34e8` |
+| U002 | Anjali Rajput | anjalirajput3067@gmail.com | GD4ZNR6B4FDI... | Faster synchronization across multipl... | Added Support link in navigation | `50fafc8` |
+| U003 | Ishaan Gupta | ishaangupta3508@gmail.com | GBCB3MBS6FPB... | The ability to schedule future transf... | Updated 'Get started' button to 'Create Free Wallet' | `206da9e` |
+| U004 | Aarav Nair | aaravnair8300@gmail.com | GC7CHXWCKHQL... | Robust dispute resolution channels bu... | Made Create Wallet button larger (xl) | `869c37d` |
+| U005 | Vikas Bhat | vikasbhat9565@gmail.com | GCF6YSJS6OGZ... | Security questions or alternative bac... | Added FAQ section to landing page | `b50487a` |
+| U006 | Vikram Rao | vikramrao7197@gmail.com | GCNYENPDBEUH... | Historical graphs tracking net worth ... | Added Privacy and Terms links to footer | `6e4cc03` |
+| U007 | Kiara Rao | kiararao7760@gmail.com | GCXQA7YZ6F54... | A sandbox or demo mode using fake tok... | Added Watch Tutorial link in hero section | `01f52ac` |
