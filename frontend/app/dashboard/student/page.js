@@ -132,6 +132,7 @@ export default function StudentDashboardPage() {
             <Panel className="p-6">
               <p className="font-display text-lg mb-4">Spending by category</p>
               <ExpensePieChart categoryBreakdown={data.categoryBreakdown} />
+              <div className="mt-4"><button className="text-xs text-signal-gold underline w-full text-center">View Detailed Analytics Dashboard</button></div>
             </Panel>
             <Panel className="p-6">
               <p className="font-display text-lg mb-4">Monthly trend</p>
