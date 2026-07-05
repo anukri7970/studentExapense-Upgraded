@@ -155,7 +155,7 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 ### Users Onboarded
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| USR-001 | Diya Reddy | diyareddy3818@gmail..com | GD2DIL2TX2SSSNSRRYNQADR5DRJSJS5KLIYXQ2ZXYQVKWUWBFDI54PF2 | Please integrate a biometric login system to make access ... |
+| USR-001 | Diya Reddy | diyareddy3818@gmail.com | GD2DIL2TX2SSSNSRRYNQADR5DRJSJS5KLIYXQ2ZXYQVKWUWBFDI54PF2 | Please integrate a biometric login system to make access ... |
 | USR-002 | Aditya Rao | adityarao6678@gmail.com | GDWAECWL2IG2I4ZICITTB2AYER4RX3AWXVIQM7OXAZUFUQJZE7SM7BCA | Creating a dedicated savings goal tracker would greatly h... |
 | USR-003 | Vihaan Verma | vihaanverma461@gmail.com | GCXLSNGBKUR7JCS7SILZ4KDIVIAY5MGQOZIOX5WIABCCCLFFAX5HIGRM | The addition of a dark mode theme is essential for those ... |
 | USR-004 | Anjali Khanna | anjalikhanna5648@gmail.com | GC6AUAOBCGUVWPLWPBS4LLGFR5YBLHKHHEKUZMDDZOMYRQJE3YQOULFX | Exporting transaction history to PDF or Excel formats wou... |
@@ -207,24 +207,6 @@ Based on feedback from our early pilot cohort, we identified and implemented the
 - API integrations with university tuition portals.
 
 ---
-
-## 12. Level 4 Final Submission Checklist
-
-Ensure your project meets all requirements before submitting.
-**Required**:
-- [x] **Public GitHub repository**: This repository is completely public.
-- [x] **README with complete documentation**: You are reading it.
-- [x] **Minimum 15+ meaningful commits**: Yes, we have 60+ meaningful commits pushing the codebase to MVP status.
-- [x] **Live demo link**: Linked in Section 8.
-- [x] **Contract deployment address**: `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
-- [x] **Screenshots showing**:
-  - [x] **Product UI**: Shown in Section 7.
-  - [x] **Mobile responsive design**: Shown in Section 7.
-  - [x] **Analytics or monitoring setup**: Shown in Section 7 (PostHog & Sentry).
-- [x] **Demo video link**: Linked in Section 8.
-- [x] **Proof of 10+ user wallet interactions**: Fully detailed in Section 7 (15 specific transactions).
-- [x] **Basic user feedback summary**: Detailed in Section 10 and via the attached CSVs.
-
 ## Quick start
 
 ### 1. Backend
