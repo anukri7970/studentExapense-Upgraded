@@ -17,7 +17,7 @@ Built a production-ready MVP with real users, on Stellar testnet.
 ## Deployed Smart Contract Details
 
 - **Network:** Stellar Testnet
-- **Smart Contract ID:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
+- **Deployed Smart Contract ID:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
 - **Explorer Link:** [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F)
 
 ---
