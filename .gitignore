@@ -15,7 +15,6 @@ build/
 
 # Rust
 target/
-Cargo.lock
 
 # Logs
 *.log
