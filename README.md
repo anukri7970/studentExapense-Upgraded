@@ -9,11 +9,18 @@ Built a production-ready MVP with real users, on Stellar testnet.
 - **Live Platform**: [student-exapense-upgraded.vercel.app](https://student-exapense-upgraded.vercel.app/)
 - **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/13XwQHzmGFWkDgURtCRDpvVY_vBUD2F8E/view?usp=sharing)
 - **Pitch Deck (PPT)**: [StudentXpense Pitch Deck](https://docs.google.com/presentation/d/1iLVWPi4RRfZS1rP2CdgqExs4IZYYd9Nw/edit?usp=drive_link&ouid=114494973489055894068&rtpof=true&sd=true)
-- **Contract:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
- - **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform?usp=dialog)
+- **User Feedback Form**: [StudentXpense Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSchxIzXlGbEx2gKRU-vV6-PBN8C86IdP4hpHAXFS1fVJpHHSQ/viewform?usp=dialog)
 - **Feedback Analysis Data**: [StudentXpense Responses Sheet Link](https://docs.google.com/spreadsheets/d/1NJnllYSZYwMXiIufWQq_o6pDSZB2Fx1xcfTR8lqzBbw/edit?usp=sharing)
+
 ---
 
+## Deployed Smart Contract Details
+
+- **Network:** Stellar Testnet
+- **Smart Contract ID:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
+- **Explorer Link:** [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F)
+
+---
 ## Why this exists
 
 Parents who send money for tuition, rent, food, and books usually lose
