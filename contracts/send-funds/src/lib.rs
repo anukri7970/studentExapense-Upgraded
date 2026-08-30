@@ -335,6 +335,7 @@ impl SendFunds {
         parent: Address,
         student: Address,
         asset: Address,
+        reason: soroban_sdk::String,
     ) -> Result<(), ContractError> {
         parent.require_auth();
 
@@ -361,7 +362,7 @@ impl SendFunds {
             .extend_ttl(&key, BUMP_AMOUNT, BUMP_AMOUNT);
 
         env.events()
-            .publish((symbol_short!("resolve"), parent, student), (asset,));
+            .publish((symbol_short!("resolve"), parent, student), (asset, reason));
 
         Ok(())
     }

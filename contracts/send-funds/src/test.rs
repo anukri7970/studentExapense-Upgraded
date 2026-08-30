@@ -139,9 +139,6 @@ fn deposit_requires_parent_auth() {
     env.mock_all_auths();
     asset_client.mint(&parent, &1_000);
 
-    // Call deposit while only mocking auth for a *different* address.
-    // The parent's own signature is never provided, so this must fail
-    // authorization rather than silently succeed.
     let impostor = Address::generate(&env);
     let result = client
         .mock_auths(&[MockAuth {
@@ -171,4 +168,59 @@ fn balance_for_unknown_pair_is_zero() {
     let (asset, _token_client, _asset_client) = setup(&env);
 
     assert_eq!(client.get_balance(&parent, &student, &asset), 0);
+}
+
+#[test]
+fn dispute_and_resolve() {
+    let env = Env::default();
+    env.mock_all_auths();
+
+    let contract_id = env.register_contract(None, SendFunds);
+    let client = SendFundsClient::new(&env, &contract_id);
+
+    let parent = Address::generate(&env);
+    let student = Address::generate(&env);
+    let (asset, _token_client, asset_client) = setup(&env);
+
+    asset_client.mint(&parent, &1_000);
+    client.deposit(&parent, &student, &asset, &100);
+
+    assert_eq!(client.is_disputed(&parent, &student, &asset), false);
+
+    client.dispute(&parent, &student, &asset);
+    assert_eq!(client.is_disputed(&parent, &student, &asset), true);
+
+    // Release should fail during dispute
+    let result = client.try_release(&parent, &student, &asset, &50);
+    assert_eq!(result, Err(Ok(ContractError::Disputed)));
+
+    client.resolve(&parent, &student, &asset, &soroban_sdk::String::from_str(&env, "resolved"));
+    assert_eq!(client.is_disputed(&parent, &student, &asset), false);
+
+    // Release should succeed now
+    let remaining = client.release(&parent, &student, &asset, &50);
+    assert_eq!(remaining, 50);
+}
+
+#[test]
+fn refund_works() {
+    let env = Env::default();
+    env.mock_all_auths();
+
+    let contract_id = env.register_contract(None, SendFunds);
+    let client = SendFundsClient::new(&env, &contract_id);
+
+    let parent = Address::generate(&env);
+    let student = Address::generate(&env);
+    let (asset, token_client, asset_client) = setup(&env);
+
+    asset_client.mint(&parent, &1_000);
+    client.deposit(&parent, &student, &asset, &500);
+
+    // Parent refunds 200
+    let remaining = client.refund(&parent, &student, &asset, &200);
+    assert_eq!(remaining, 300);
+
+    assert_eq!(token_client.balance(&parent), 700); // 500 initial leftover + 200 refunded
+    assert_eq!(client.get_balance(&parent, &student, &asset), 300);
 }
