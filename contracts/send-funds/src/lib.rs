@@ -76,7 +76,6 @@ pub struct SendFunds;
 #[contractimpl]
 impl SendFunds {
     /// Parent deposits `amount` of `asset` into escrow for `student`.
-
     pub fn student_fund(
         env: Env,
         parent: Address,
