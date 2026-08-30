@@ -29,6 +29,21 @@ pub struct EscrowKey {
 
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
+pub struct SavingsKey {
+    pub student: Address,
+    pub asset: Address,
+}
+
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct LimitKey {
+    pub parent: Address,
+    pub student: Address,
+    pub asset: Address,
+}
+
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EscrowValue {
     pub balance: i128,
     pub disputed: bool,
@@ -49,6 +64,10 @@ pub enum ContractError {
     Disputed = 4,
     /// The escrow is currently paused by the parent.
     Paused = 5,
+    /// The requested withdrawal amount exceeds the set limit.
+    LimitExceeded = 6,
+    /// The requested savings withdrawal exceeds the savings balance.
+    SavingsInsufficient = 7,
 }
 
 #[contract]
@@ -210,6 +229,13 @@ impl SendFunds {
         if current_val.is_paused {
             return Err(ContractError::Paused);
         }
+
+        let limit_key = LimitKey {
+            parent: parent.clone(),
+            student: student.clone(),
+            asset: asset.clone(),
+        };
+        if let Some(limit) = env.storage().persistent().get::<_, i128>(&limit_key) { if amount > limit { return Err(ContractError::LimitExceeded); } }
 
         if amount > current_val.balance {
             return Err(ContractError::InsufficientBalance);
@@ -400,9 +426,13 @@ impl SendFunds {
         Ok(refund_amt)
     }
 
-    pub fn set_limit(env: Env, parent: Address, student: Address, limit: i128) {
+    pub fn set_limit(env: Env, parent: Address, student: Address, asset: Address, limit: i128) {
         parent.require_auth();
-        let key = soroban_sdk::symbol_short!("limit");
+        let key = LimitKey {
+            parent: parent.clone(),
+            student: student.clone(),
+            asset: asset.clone(),
+        };
         env.storage().persistent().set(&key, &limit);
     }
 
@@ -482,9 +512,6 @@ impl SendFunds {
     }
 
     /// Read-only: available (un-released) escrow balance.
-
-    /// @dev Retrieves the current available balance for a student's escrow.
-
     pub fn get_balance(env: Env, parent: Address, student: Address, asset: Address) -> i128 {
         let key = EscrowKey {
             parent,
@@ -512,6 +539,72 @@ impl SendFunds {
             is_paused: false,
         });
         val.disputed
+    }
+
+    /// Student transfers funds from available balance to their Savings Pool.
+    pub fn transfer_to_savings(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<(), ContractError> {
+        student.require_auth();
+        
+        if amount <= 0 {
+            return Err(ContractError::InvalidAmount);
+        }
+
+        let esc_key = EscrowKey {
+            parent: parent.clone(),
+            student: student.clone(),
+            asset: asset.clone(),
+        };
+
+        let mut current_val = env
+            .storage()
+            .persistent()
+            .get::<_, EscrowValue>(&esc_key)
+            .unwrap_or(EscrowValue {
+                balance: 0,
+                disputed: false,
+                is_paused: false,
+            });
+
+        if current_val.disputed {
+            return Err(ContractError::Disputed);
+        }
+
+        if amount > current_val.balance {
+            return Err(ContractError::InsufficientBalance);
+        }
+
+        current_val.balance -= amount;
+        env.storage().persistent().set(&esc_key, &current_val);
+
+        let savings_key = SavingsKey {
+            student: student.clone(),
+            asset: asset.clone(),
+        };
+        
+        let mut savings_bal = env.storage().persistent().get::<_, i128>(&savings_key).unwrap_or(0);
+        savings_bal = savings_bal.checked_add(amount).ok_or(ContractError::Overflow)?;
+        env.storage().persistent().set(&savings_key, &savings_bal);
+
+        env.events().publish(
+            (symbol_short!("to_save"), student),
+            (asset, amount, savings_bal),
+        );
+        Ok(())
+    }
+
+    /// Read-only: get student savings balance.
+    pub fn get_savings(env: Env, student: Address, asset: Address) -> i128 {
+        let savings_key = SavingsKey {
+            student,
+            asset,
+        };
+        env.storage().persistent().get::<_, i128>(&savings_key).unwrap_or(0)
     }
 }
 
