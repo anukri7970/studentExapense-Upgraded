@@ -235,7 +235,11 @@ impl SendFunds {
             student: student.clone(),
             asset: asset.clone(),
         };
-        if let Some(limit) = env.storage().persistent().get::<_, i128>(&limit_key) { if amount > limit { return Err(ContractError::LimitExceeded); } }
+        if let Some(limit) = env.storage().persistent().get::<_, i128>(&limit_key) {
+            if amount > limit {
+                return Err(ContractError::LimitExceeded);
+            }
+        }
 
         if amount > current_val.balance {
             return Err(ContractError::InsufficientBalance);
@@ -550,7 +554,7 @@ impl SendFunds {
         amount: i128,
     ) -> Result<(), ContractError> {
         student.require_auth();
-        
+
         if amount <= 0 {
             return Err(ContractError::InvalidAmount);
         }
@@ -586,9 +590,15 @@ impl SendFunds {
             student: student.clone(),
             asset: asset.clone(),
         };
-        
-        let mut savings_bal = env.storage().persistent().get::<_, i128>(&savings_key).unwrap_or(0);
-        savings_bal = savings_bal.checked_add(amount).ok_or(ContractError::Overflow)?;
+
+        let mut savings_bal = env
+            .storage()
+            .persistent()
+            .get::<_, i128>(&savings_key)
+            .unwrap_or(0);
+        savings_bal = savings_bal
+            .checked_add(amount)
+            .ok_or(ContractError::Overflow)?;
         env.storage().persistent().set(&savings_key, &savings_bal);
 
         env.events().publish(
@@ -600,11 +610,11 @@ impl SendFunds {
 
     /// Read-only: get student savings balance.
     pub fn get_savings(env: Env, student: Address, asset: Address) -> i128 {
-        let savings_key = SavingsKey {
-            student,
-            asset,
-        };
-        env.storage().persistent().get::<_, i128>(&savings_key).unwrap_or(0)
+        let savings_key = SavingsKey { student, asset };
+        env.storage()
+            .persistent()
+            .get::<_, i128>(&savings_key)
+            .unwrap_or(0)
     }
 }
 
