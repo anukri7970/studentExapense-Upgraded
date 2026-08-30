@@ -99,9 +99,9 @@ contracts/  Soroban (Rust) — the SendFunds escrow contract + tests
 - **PostHog & Sentry**: Full telemetry and error monitoring integration.
   ![Analytics](screenshots/analytics_console.png)
 
-### Stellar Expert Contract View
-- **Live Contract on Stellar Testnet Explorer**:
-  ![Stellar Contract](screenshots/stellar_contract.png)
+### Contract Activity (Stellar Expert)
+- **Live contract transactions on Stellar Testnet Explorer**:
+  ![Contract Activity](screenshots/stellar_contract.png)
 
 ---
 
