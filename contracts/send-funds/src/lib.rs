@@ -318,6 +318,13 @@ impl SendFunds {
         Ok(refund_amt)
     }
 
+
+    pub fn set_limit(env: Env, parent: Address, student: Address, limit: i128) {
+        parent.require_auth();
+        let key = soroban_sdk::symbol_short!("limit");
+        env.storage().persistent().set(&key, &limit);
+    }
+
     /// Parent flags the escrow as disputed, freezing releases.
     pub fn dispute(
         env: Env,
