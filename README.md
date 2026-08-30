@@ -103,6 +103,10 @@ contracts/  Soroban (Rust) — the SendFunds escrow contract + tests
 - **Live contract transactions on Stellar Testnet Explorer**:
   ![Contract Activity](screenshots/stellar_contract.png)
 
+### Onchain Analytics
+- **Real-time on-chain transaction analytics**:
+  ![Onchain Analytics](screenshots/onchain_analytics.png)
+
 ---
 
 ## 8. User Growth Metrics (Level 4)
