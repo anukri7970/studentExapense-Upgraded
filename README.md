@@ -99,7 +99,56 @@ contracts/  Soroban (Rust) — the SendFunds escrow contract + tests
 - **PostHog & Sentry**: Full telemetry and error monitoring integration.
   ![Analytics](screenshots/analytics_console.png)
 
-  ## Onchain Proof of Wallet Interactions
+---
+
+## 8. User Growth Metrics (Level 4)
+
+- **Total Users Onboarded**: 15+
+- **Real Transactions Processed**: 20+
+- **Average User Satisfaction**: 4.4/5
+
+### Users Onboarded
+| User ID | Name | Email | Wallet Address | Feedback Summary |
+|---|---|---|---|---|
+| USR-001 | Akash Mondal | 73akash58mondal@gmail.com | GBYC4FYEHK65MMJITMSMCXDZJA2YTT37PA4COXI2CXFFCWR3U4JFQUNR | quick search bar to filter past transactions by date or keyword is definitely needed for navigating the expense history tab |
+| USR-002 | Himanshu Jha | jhahimanshu653@gmail.com | GCJXLB4FDC6BHBPBVWKPEYRUCHACQJPX75UYFVVK3VEUT7YLJSC2BOXD | I'd love the ability to attach receipt photos directly to specific transactions to maintain a better audit trail for my family |
+| USR-003 | Ranjana Mehta | mehtaranjana745@gmail.com | GD4GD3GGRL5JHQGTOPQVUND3OJBHKDQKLW56RGCNKNLQWGEKCDTL4UXM | Please support multiple languages; it would make the platform much more accessible to international students and their parents |
+| USR-004 | Jayant Vaibhav | jayantvaibhavspj@gmail.com | GBTTXTYZC6T6N7AFWL6A4RE3ZBNQDNJFAIMVHZWKY64AP7QUCBOESONY | Adding a 'savings goal' tracker widget on the student dashboard would motivate me to spend less on unnecessary items |
+| USR-005 | Sohbham Patil | sohamrpatil4220@gmail.com | GBSRIXJJ5KHXPHW3SL43FSYZF67LMPAA3CLT33UIBM4DD4AQGBJ2AAJY | brief interactive tutorial during the first login would really help parents who aren't familiar with crypto wallets |
+| USR-006 | Anu Mehta | anukr12354@gmail.com | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | I love the AI budget advisor, but I wish I could export my monthly expense breakdown directly to a PDF for my personal records |
+| USR-007 | Smriti kumari | adhikarismriti994@gmail.com | GDVGEANJKZ6PATGIEJYFL3SIHUG4UEFPFIWL4SWA54YYKBDZ2ZREKKAW | Smart contract escrow is great for security! Adding a dark mode for the dashboard would make it much easier to use at night |
+| USR-008 | Simmi Tiwari | simmitiwari770@gmail.com | GA43TYO2HJ3C7BQL65HVGUJE3DQC6GANAKOD7IUUKORWQPOSPF57XF5Y | mobile app version (iOS/Android) with push notifications for incoming funds would make tracking expenses much more convenient |
+| USR-009 | Eshan Mehra | enzobaby0099@gmail.com | GDCW4EMRDG6XHMIDARGEE6HO6GMXHGP5BEPODRFNT4WJJIPDA5BKJPWV | It would be useful to manually categorize some transactions, as the AI sometimes mislabels my coffee shop visits as 'Groceries' |
+| USR-010 | Shan Arav | shantanav7@gmail.com | GCXLFK7J6HPWKNC7WZMAAXOYNLBNVZN5RKZFY72O6QD3VPR75V3REONO | Could you integrate automated SMS or email alerts to notify parents when the escrow balance drops below a certain threshold? |
+| USR-011 | Subheksh koma | komasubheeksh@gmail.com | GDLFDODWAZ4VBLQPZTVCZUYMBTDFXEAIGBOEQVY2A7RD43FPKC76KQF2 | Spending graphs are helpful, but adding a split-bill calculator would be amazing for sharing rent and groceries with roommates |
+| USR-012 | Sara Anaya | saranyasa999@gmail.com | GA76C36OPSVHNVT3A2CHK6JLJZEJJF3H5PX5VZKHIGLQMTVOY4N3VQRG | Please add a feature to set up recurring automated deposits so I don't have to manually approve tuition transfers every semester |
+| USR-013 | Anil Kumar | anilkumar981@gmail.com | GAGL2NCWNZQGU3C6MLQVJWMPQYVKPMW7ZJ4JL53NZ6GC3X4EFTSHZVRB | Can you add support for biometric login (FaceID/Fingerprint) on mobile browsers to make logging in faster and more secure? |
+| USR-014 | Sunita Gupta | sunitagupta2204@gmail.com | GBSNS35EEP2XSCKR7DLNQ5OJY6JGXEMKBRX34EFSKTBDF2AH2GZMOHML | UI is clean, but a pie chart breaking down expenditure by percentage would make the analytics much easier to read at a glance |
+| USR-015 | rakesh Sharma | rakeshsharma885@gmail.com | GAP6ZDDWZISX4QBVIG6K3WSQIE64JL3AQ6KOABV6LUJWSPUFS67N5323 | It would be great if the parent dashboard showed a consolidated view of multiple students if I have two kids currently in college |
+
+
+---
+
+## 9. Product Improvements (Based on Real User Feedback)
+
+Based on feedback from our early pilot cohort, we identified and implemented the following improvements to hit production quality standards. Below is an Improvement Summary mapped to the User Feedback.
+
+### 📊 Feedback Implementation Tracker
+
+| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit Link |
+|---|---|---|---|---|---|---|
+| USR-028 | Vijay Pillai | vijaypillai707@gmail.com | GACVDW3GYQE5TMRJZA4U2WTUED6ZQSOXWQAUUZQIWEKXUQFXFXBHOITG | option to temporarily pause the escrow contract during the summer break would be very convenient | Pause/Unpause Escrow | [`a86463b`](https://github.com/anukri7970/studentExapense-Upgraded/commit/a86463b) |
+| USR-045 | Ajay Thakur | ajaythakur002@gmail.com | GB6MNVL74T5XBKZFJM4YNEUHC4XZTNDZYNDTZFI4543CDDR5NXDQ5JA5 | resolve dispute' action should perhaps require a brief typed explanation to keep a record of why it was resolved | Resolution Reason | [`2016282`](https://github.com/anukri7970/studentExapense-Upgraded/commit/2016282) |
+| USR-016 | Kavita Singh | kavitasingh775@gmail.com | GCAH7TO54AZ2YBA6OMVGGB7J7VP7N3E5MNXFD5LLJZ7M2AOSDRB2P5L5 | escrow process is straightforward, but it would be nice to have a quick 'cancel' button if I make a deposit by mistake | Cancel Deposit | [`6b25191`](https://github.com/anukri7970/studentExapense-Upgraded/commit/6b25191) |
+| USR-035 | Rohan Tiwari | rohantiwari002@gmail.com | GDQOHE3W25SUW6BITN46YQPAV7N3ZWT6OE5AKOMHL5NGXS27VB4YIXJW | Can we get a 'low balance' warning notification sent to the student's phone before a purchase gets declined? | Low Balance Warning Event | [`838c393`](https://github.com/anukri7970/studentExapense-Upgraded/commit/838c393) |
+| USR-034 | Sandeep Bhat | sandeepbhater4@gmail.com | GAH737E7QIXB6Z4IA3PU63DLH7TMCMWIM7WKO3SB7OJB3HCS3P2ZQPOZ | Adding customizable spending limits for different categories (like max $100 on entertainment) would be amazing | Withdrawal Limits | [`f074905`](https://github.com/anukri7970/studentExapense-Upgraded/commit/f074905) |
+| USR-024 | Khushi Singh | singhkhushi0719@gmail.com | GA2FKMXBWYWM5JBL2DYK4OH7SSMZNG6A5KEEFCBQREJGL34BEXCJWNMP | Please add a tooltip explaining what the 'dispute' function does, as new users might find it confusing | Code Documentation for Tooltips | [`dff87fc`](https://github.com/anukri7970/studentExapense-Upgraded/commit/dff87fc) |
+| USR-006 | Anu Mehta | anukr12354@gmail.com | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | I love the AI budget advisor, but I wish I could export my monthly expense breakdown directly to a PDF for my personal records | Spending Categories | [`1467ba7`](https://github.com/anukri7970/studentExapense-Upgraded/commit/1467ba7) |
+
+
+---
+
+## 10. Onchain Proof of Wallet Interactions
 
 Below is the verified ledger of 15 real testnet transactions, showing parent deposits, student withdrawals, and tuition payments:
 
@@ -120,83 +169,7 @@ Below is the verified ledger of 15 real testnet transactions, showing parent dep
 | 13 | Anil Kumar (Parent) | Anil Kumar (Escrow) | 304 XLM | [51280f6f62dc...](https://stellar.expert/explorer/testnet/tx/51280f6f62dceaffe37aebda16101913b883a0ee2ad1594e0e8d98aa865d8a5d) |
 | 14 | Sunita Gupta (Parent) | Sunita Gupta (Escrow) | 321 XLM | [67bc6f4a66f5...](https://stellar.expert/explorer/testnet/tx/67bc6f4a66f5d21645fc01066d34b1d2601483ab512732f0bff064e3ce26fa57) |
 | 15 | rakesh Sharma (Parent) | rakesh Sharma (Escrow) | 338 XLM | [6e7ac70ea1ad...](https://stellar.expert/explorer/testnet/tx/6e7ac70ea1ad109d613006e72b0acceb4a9988bbb79d7d610ecbf5a37d3a435a) |
-| 16 | Reyansh Singh (Escrow Release) | Reyansh Singh | 293 XLM | [e87ca49f5e9d930...](https://stellar.expert/explorer/testnet/tx/e87ca49f5e9d930deaa093630b56540cc5d024cf20fa2e37053830bfb5bc6fd2) |
-| 17 | Raj Chauhan | Ishaan Chauhan | 438 XLM | [4a5b19b428b9d27...](https://stellar.expert/explorer/testnet/tx/4a5b19b428b9d27322e65a68924a6cd25d9cdf10178b1fb4542f045cb77f88b0) |
-| 18 | Raj Rao | Neha Rao | 184 XLM | [98b846365d115d4...](https://stellar.expert/explorer/testnet/tx/98b846365d115d45582eae5dbae8c7b2e7586b699af9a3221d0951124af815cd) |
-| 19 | Rakesh Joshi (Escrow Release) | Rakesh Joshi | 334 XLM | [f64c27c17589827...](https://stellar.expert/explorer/testnet/tx/f64c27c175898277d8671f3ccd02d014d839a75ce9f323286fe7700388dc26ed) |
-| 20 | Krishna Iyer (Escrow Release) | Krishna Iyer | 304 XLM | [048cba6a1c3c93b...](https://stellar.expert/explorer/testnet/tx/048cba6a1c3c93b89fc5403fe38d06d949eb84a758e6aa3d9882b5730dda3910) |
-| 21 | Raj Bhat | Sunil Bhat | 146 XLM | [b8f7b27e674dc29...](https://stellar.expert/explorer/testnet/tx/b8f7b27e674dc2959b1fb83d4eeed16a72f2f495ff5b19e59f0510d242d6e9db) |
-| 22 | Raj Patel | Arjun Patel | 183 XLM | [634610dc35a684b...](https://stellar.expert/explorer/testnet/tx/634610dc35a684b37508d4a9de0e93b4583792ca487cd7c673372c0a9839462a) |
-| 23 | Raj Rao | Raj Rao | 97 XLM | [bc944d9a6672a86...](https://stellar.expert/explorer/testnet/tx/bc944d9a6672a86fc6e4ad3abc6d68cb4066e2f9aeaeefb2ea9be36b468907ea) |
-| 24 | Vikram Iyer (Escrow Release) | Vikram Iyer | 173 XLM | [1526985480ebc6b...](https://stellar.expert/explorer/testnet/tx/1526985480ebc6bd9b4816d6d6419b9ea34add9bcece5473f780ad10496e05c8) |
-| 25 | Pihu Iyer (Escrow Release) | Pihu Iyer | 155 XLM | [6058e62cc4c0ce0...](https://stellar.expert/explorer/testnet/tx/6058e62cc4c0ce0a2598d103fdca19a23603a9de84ce1b337f92c880b3229753) |
-| 26 | Nisha Joshi (Escrow Release) | Nisha Joshi | 255 XLM | [c4e9eae06de2e3d...](https://stellar.expert/explorer/testnet/tx/c4e9eae06de2e3dea4f8e11e3975c8f881300110275f4057c829072c6c3bb119) |
-| 27 | Amit Rajput (Escrow Release) | Amit Rajput | 158 XLM | [9e8134fafaa13e6...](https://stellar.expert/explorer/testnet/tx/9e8134fafaa13e618e863bac50a5f9450431b6905eefd835f84717e6ea24bb29) |
-| 28 | Avni Rao (Escrow Release) | Avni Rao | 162 XLM | [d983532c97cc885...](https://stellar.expert/explorer/testnet/tx/d983532c97cc885e3d0ec1c86e5e5b896c2e3e07a4dc45ccd177be2d4bc0518c) |
-| 29 | Raj Rajput | Reyansh Rajput | 261 XLM | [bc7a4a3d5ae7791...](https://stellar.expert/explorer/testnet/tx/bc7a4a3d5ae7791ad1223c380c07395816a1d240e274b42cbf9e83f7489f8fc1) |
-| 30 | Ananya Bhat (Escrow Release) | Ananya Bhat | 174 XLM | [931c1db04b94b8b...](https://stellar.expert/explorer/testnet/tx/931c1db04b94b8b2864b147226f82806855420c05f243783c26fc49a91dcf9c6) |
-| 31 | Aditya Nair (Escrow Release) | Aditya Nair | 371 XLM | [882cdeed0f520aa...](https://stellar.expert/explorer/testnet/tx/882cdeed0f520aaefb45705a75f97a77e53fca19d12e65cdb7c8e8bbdb97e203) |
-| 32 | Rahul Iyer (Escrow Release) | Rahul Iyer | 177 XLM | [229039f51f42fd4...](https://stellar.expert/explorer/testnet/tx/229039f51f42fd4ac98e3e8e3cbd4d5e7ec18e663ed98381af61419b12830f6a) |
-| 33 | Raj Gupta | Ravi Gupta | 225 XLM | [05dbef2b30bacbc...](https://stellar.expert/explorer/testnet/tx/05dbef2b30bacbca60e5a988b38e7fd3dd46b7f7ae918b739cd1db959312c2c3) |
-| 34 | Kavya Reddy (Escrow Release) | Kavya Reddy | 214 XLM | [e4bac49a97706d4...](https://stellar.expert/explorer/testnet/tx/e4bac49a97706d4841d95703ed3073e95b5e6b45baa0360744fdefe4a3eab547) |
-| 35 | Aarav Rajput (Escrow Release) | Aarav Rajput | 301 XLM | [36cccefb11f8672...](https://stellar.expert/explorer/testnet/tx/36cccefb11f867256171f363e557755d32be686eff184a6bd989a46cfd3f634d) |
-| 36 | Raj Singh | Aarav Singh | 188 XLM | [94b9af10ebff0c7...](https://stellar.expert/explorer/testnet/tx/94b9af10ebff0c754e53491176385ae28ada22aaffea3da71f91edfcf94e0237) |
-| 37 | Pihu Menon (Escrow Release) | Pihu Menon | 215 XLM | [73c22329f974c77...](https://stellar.expert/explorer/testnet/tx/73c22329f974c773136fcff0f7cf9127c4a353e24a42adb73c49528a06185571) |
-| 38 | Ravi Sharma (Escrow Release) | Ravi Sharma | 415 XLM | [96d254a95ccd6ed...](https://stellar.expert/explorer/testnet/tx/96d254a95ccd6ed7a0dd488ec0ff899adb907edd231db334d07b7783692438f9) |
-| 39 | Raj Nair | Avni Nair | 458 XLM | [dad1db1c786db6f...](https://stellar.expert/explorer/testnet/tx/dad1db1c786db6fe5879df6b3f0efa6d0d0c49dcc718736e045ba7f4b7409db8) |
-| 40 | Raj Malhotra | Rakesh Malhotra | 273 XLM | [051b75a7910a7fb...](https://stellar.expert/explorer/testnet/tx/051b75a7910a7fb758bf1acea811f0bec1e9d1524ab93004def26f2300091968) |
-| 41 | Kavya Khanna (Escrow Release) | Kavya Khanna | 495 XLM | [881b730dbc47ce0...](https://stellar.expert/explorer/testnet/tx/881b730dbc47ce0b6e2fbb972c2fc049cac08fc04044648e4220f07a63b03975) |
-| 42 | Raj Nair | Rakesh Nair | 404 XLM | [556f71e58e304a2...](https://stellar.expert/explorer/testnet/tx/556f71e58e304a294dfe4f8ad88ee3f8e22a85ccd5bc36266bf4877cdaca70d5) |
-| 43 | Aarav Mehta (Escrow Release) | Aarav Mehta | 208 XLM | [e12af1c24fe8281...](https://stellar.expert/explorer/testnet/tx/e12af1c24fe8281a1d0c2b950245ce10a0f93956230fa7e6baedd533523c6510) |
-| 44 | Anjali Rajput (Escrow Release) | Anjali Rajput | 270 XLM | [d9c52f732f4065e...](https://stellar.expert/explorer/testnet/tx/d9c52f732f4065e57a1863419dbf476dd5ea559c96f80edf401ab782b7215854) |
-| 45 | Ishaan Gupta (Escrow Release) | Ishaan Gupta | 57 XLM | [2ca7a5c1875f124...](https://stellar.expert/explorer/testnet/tx/2ca7a5c1875f1240155d4848371a9ffb9ecb3870f9ff18a33042fe8065cc963e) |
-| 46 | Aarav Nair (Escrow Release) | Aarav Nair | 194 XLM | [ad246aac56bc43b...](https://stellar.expert/explorer/testnet/tx/ad246aac56bc43b06fb07f3e289deea35cad0001651f19df64910b0afe1fd04d) |
-| 47 | Raj Bhat | Vikas Bhat | 181 XLM | [504a7931f92ba42...](https://stellar.expert/explorer/testnet/tx/504a7931f92ba421b3037c89f1e6948da7aa590e3b98840ed1f3b723c939cb8c) |
-| 48 | Raj Rao | Vikram Rao | 312 XLM | [cbc743f9c9e1235...](https://stellar.expert/explorer/testnet/tx/cbc743f9c9e12353b4a29c5113b9fb78ed0bb3d6ec8b8ad8f52d4f77ff8b9e5c) |
-| 49 | Raj Rao | Kiara Rao | 330 XLM | [88c3336950bc647...](https://stellar.expert/explorer/testnet/tx/88c3336950bc647da7d35d85a815409d973000879071790ab2ff07118a287e34) |
-| 50 | Raj Iyer | Raj Iyer | 339 XLM | [f49a6f34053e145...](https://stellar.expert/explorer/testnet/tx/f49a6f34053e145e470766cec15db2ab225ba3c7653b75e67315d67030776d94) |
-## 9. User Growth Metrics (Level 4)
 
-- **Total Users Onboarded**: 15+
-- **Real Transactions Processed**: 20+
-- **Average User Satisfaction**: 4.4/5
-### Users Onboarded
-| User ID | Name | Email | Wallet Address | Feedback Summary |
-|---|---|---|---|---|
-| USR-001 | Akash Mondal | 73akash58mondal@gmail.com | GBYC4FYEHK65MMJITMSMCXDZJA2YTT37PA4COXI2CXFFCWR3U4JFQUNR | quick search bar to filter past transactions by date or k... |
-| USR-002 | Himanshu Jha | jhahimanshu653@gmail.com | GCJXLB4FDC6BHBPBVWKPEYRUCHACQJPX75UYFVVK3VEUT7YLJSC2BOXD | I'd love the ability to attach receipt photos directly to... |
-| USR-003 | Ranjana Mehta | mehtaranjana745@gmail.com | GD4GD3GGRL5JHQGTOPQVUND3OJBHKDQKLW56RGCNKNLQWGEKCDTL4UXM | Please support multiple languages; it would make the plat... |
-| USR-004 | Jayant Vaibhav | jayantvaibhavspj@gmail.com | GBTTXTYZC6T6N7AFWL6A4RE3ZBNQDNJFAIMVHZWKY64AP7QUCBOESONY | Adding a 'savings goal' tracker widget on the student das... |
-| USR-005 | Sohbham Patil | sohamrpatil4220@gmail.com | GBSRIXJJ5KHXPHW3SL43FSYZF67LMPAA3CLT33UIBM4DD4AQGBJ2AAJY | brief interactive tutorial during the first login would r... |
-| USR-006 | Anu Mehta | anukr12354@gmail.com | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | I love the AI budget advisor, but I wish I could export m... |
-| USR-007 | Smriti kumari | adhikarismriti994@gmail.com | GDVGEANJKZ6PATGIEJYFL3SIHUG4UEFPFIWL4SWA54YYKBDZ2ZREKKAW | Smart contract escrow is great for security! Adding a dar... |
-| USR-008 | Simmi Tiwari | simmitiwari770@gmail.com | GA43TYO2HJ3C7BQL65HVGUJE3DQC6GANAKOD7IUUKORWQPOSPF57XF5Y | mobile app version (iOS/Android) with push notifications ... |
-| USR-009 | Eshan Mehra | enzobaby0099@gmail.com | GDCW4EMRDG6XHMIDARGEE6HO6GMXHGP5BEPODRFNT4WJJIPDA5BKJPWV | It would be useful to manually categorize some transactio... |
-| USR-010 | Shan Arav | shantanav7@gmail.com | GCXLFK7J6HPWKNC7WZMAAXOYNLBNVZN5RKZFY72O6QD3VPR75V3REONO | Could you integrate automated SMS or email alerts to noti... |
-| USR-011 | Subheksh koma | komasubheeksh@gmail.com | GDLFDODWAZ4VBLQPZTVCZUYMBTDFXEAIGBOEQVY2A7RD43FPKC76KQF2 | Spending graphs are helpful, but adding a split-bill calc... |
-| USR-012 | Sara Anaya | saranyasa999@gmail.com | GA76C36OPSVHNVT3A2CHK6JLJZEJJF3H5PX5VZKHIGLQMTVOY4N3VQRG | Please add a feature to set up recurring automated deposi... |
-| USR-013 | Anil Kumar | anilkumar981@gmail.com | GAGL2NCWNZQGU3C6MLQVJWMPQYVKPMW7ZJ4JL53NZ6GC3X4EFTSHZVRB | Can you add support for biometric login (FaceID/Fingerpri... |
-| USR-014 | Sunita Gupta | sunitagupta2204@gmail.com | GBSNS35EEP2XSCKR7DLNQ5OJY6JGXEMKBRX34EFSKTBDF2AH2GZMOHML | UI is clean, but a pie chart breaking down expenditure by... |
-| USR-015 | rakesh Sharma | rakeshsharma885@gmail.com | GAP6ZDDWZISX4QBVIG6K3WSQIE64JL3AQ6KOABV6LUJWSPUFS67N5323 | It would be great if the parent dashboard showed a consol... | Providing a monthly financial summary report via email co... |
-
----
-
-## 10. Product Improvements (Based on Real User Feedback)
-
-Based on feedback from our early pilot cohort, we identified and implemented the following improvements to hit production quality standards. Below is an Improvement Summary mapped to the User Feedback.
-
-### 📊 Feedback Implementation Tracker
-
-
-| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit Link |
-|---|---|---|---|---|---|---|
-| USR-028 | Vijay Pillai | vijaypillai707@gmail.com | GACVDW3GYQE5TMRJZA4U2WTUED6ZQSOXWQAUUZQIWEKXUQFXFXBHOITG | option to temporarily pause the escro... | Pause/Unpause Escrow | [`a86463b`](https://github.com/anukri7970/studentExapense-Upgraded/commit/a86463b) |
-| USR-045 | Ajay Thakur | ajaythakur002@gmail.com | GB6MNVL74T5XBKZFJM4YNEUHC4XZTNDZYNDTZFI4543CDDR5NXDQ5JA5 | resolve dispute' action should perhap... | Resolution Reason | [`2016282`](https://github.com/anukri7970/studentExapense-Upgraded/commit/2016282) |
-| USR-016 | Kavita Singh | kavitasingh775@gmail.com | GCAH7TO54AZ2YBA6OMVGGB7J7VP7N3E5MNXFD5LLJZ7M2AOSDRB2P5L5 | escrow process is straightforward, bu... | Cancel Deposit | [`6b25191`](https://github.com/anukri7970/studentExapense-Upgraded/commit/6b25191) |
-| USR-035 | Rohan Tiwari | rohantiwari002@gmail.com | GDQOHE3W25SUW6BITN46YQPAV7N3ZWT6OE5AKOMHL5NGXS27VB4YIXJW | Can we get a 'low balance' warning no... | Low Balance Warning Event | [`838c393`](https://github.com/anukri7970/studentExapense-Upgraded/commit/838c393) |
-| USR-034 | Sandeep Bhat | sandeepbhater4@gmail.com | GAH737E7QIXB6Z4IA3PU63DLH7TMCMWIM7WKO3SB7OJB3HCS3P2ZQPOZ | Adding customizable spending limits f... | Withdrawal Limits | [`f074905`](https://github.com/anukri7970/studentExapense-Upgraded/commit/f074905) |
-| USR-024 | Khushi Singh | singhkhushi0719@gmail.com | GA2FKMXBWYWM5JBL2DYK4OH7SSMZNG6A5KEEFCBQREJGL34BEXCJWNMP | Please add a tooltip explaining what ... | Code Documentation for Tooltips | [`dff87fc`](https://github.com/anukri7970/studentExapense-Upgraded/commit/dff87fc) |
-| USR-006 | Anu Mehta | anukr12354@gmail.com | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | I love the AI budget advisor, but I w... | Spending Categories | [`1467ba7`](https://github.com/anukri7970/studentExapense-Upgraded/commit/1467ba7) |
 
 ---
 
@@ -280,6 +253,3 @@ dashboards.
 - **Tuition payment bypasses escrow** by design — it's a direct payment
   because tuition is a final destination for funds, not something a
   university would "release" further.
-
-
-
