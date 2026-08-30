@@ -114,6 +114,7 @@ impl SendFunds {
         student: Address,
         asset: Address,
         amount: i128,
+        category: soroban_sdk::String,
     ) -> Result<i128, ContractError> {
         student.require_auth();
 
@@ -160,7 +161,7 @@ impl SendFunds {
 
         env.events().publish(
             (symbol_short!("release"), parent, student),
-            (asset, amount, current_val.balance),
+            (asset, amount, current_val.balance, category),
         );
 
         Ok(current_val.balance)
