@@ -37,9 +37,17 @@ pub struct SavingsKey {
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct LimitKey {
+    pub tag: soroban_sdk::Symbol,
     pub parent: Address,
     pub student: Address,
     pub asset: Address,
+}
+
+/// Key used to store a tooltip string for a named UI field.
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct TooltipKey {
+    pub field: soroban_sdk::String,
 }
 
 #[contracttype]
@@ -230,6 +238,7 @@ impl SendFunds {
         }
 
         let limit_key = LimitKey {
+            tag: symbol_short!("wdlimit"),
             parent: parent.clone(),
             student: student.clone(),
             asset: asset.clone(),
@@ -261,8 +270,12 @@ impl SendFunds {
         }
 
         env.events().publish(
-            (symbol_short!("release"), parent, student),
-            (asset, amount, current_val.balance, category),
+            (symbol_short!("release"), parent.clone(), student.clone()),
+            (asset.clone(), amount, current_val.balance),
+        );
+        env.events().publish(
+            (symbol_short!("rel_cat"), parent, student),
+            (asset, category),
         );
 
         Ok(current_val.balance)
@@ -432,6 +445,7 @@ impl SendFunds {
     pub fn set_limit(env: Env, parent: Address, student: Address, asset: Address, limit: i128) {
         parent.require_auth();
         let key = LimitKey {
+            tag: symbol_short!("wdlimit"),
             parent: parent.clone(),
             student: student.clone(),
             asset: asset.clone(),
@@ -614,6 +628,37 @@ impl SendFunds {
             .persistent()
             .get::<_, i128>(&savings_key)
             .unwrap_or(0)
+    }
+
+    /// Admin stores a tooltip string for a named UI field on-chain.
+    /// `field` is the field name (e.g. "amount", "category", "limit").
+    /// `text`  is the help text shown to the student in the dashboard.
+    pub fn set_tooltip(
+        env: Env,
+        admin: Address,
+        field: soroban_sdk::String,
+        text: soroban_sdk::String,
+    ) {
+        admin.require_auth();
+        let key = TooltipKey {
+            field: field.clone(),
+        };
+        env.storage().persistent().set(&key, &text);
+        env.storage()
+            .persistent()
+            .extend_ttl(&key, BUMP_AMOUNT, BUMP_AMOUNT);
+        env.events()
+            .publish((symbol_short!("tooltip"), admin), (field, text));
+    }
+
+    /// Read-only: fetch the tooltip text for a named UI field.
+    /// Returns an empty string if no tooltip has been set for that field.
+    pub fn get_tooltip(env: Env, field: soroban_sdk::String) -> soroban_sdk::String {
+        let key = TooltipKey { field };
+        env.storage()
+            .persistent()
+            .get::<_, soroban_sdk::String>(&key)
+            .unwrap_or_else(|| soroban_sdk::String::from_str(&env, ""))
     }
 }
 
