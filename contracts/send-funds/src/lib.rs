@@ -293,6 +293,26 @@ impl SendFunds {
         Ok(())
     }
 
+
+    /// Parent can cancel the escrow immediately and get all funds back.
+    pub fn cancel_escrow(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+    ) -> Result<i128, ContractError> {
+        parent.require_auth();
+        let key = EscrowKey { parent: parent.clone(), student: student.clone(), asset: asset.clone() };
+        let mut current_val = env.storage().persistent().get::<_, EscrowValue>(&key).unwrap_or(EscrowValue { balance: 0, disputed: false, is_paused: false });
+        let refund_amt = current_val.balance;
+        current_val.balance = 0;
+        env.storage().persistent().set(&key, &current_val);
+        let client = token::Client::new(&env, &asset);
+        if refund_amt > 0 { client.transfer(&env.current_contract_address(), &parent, &refund_amt); }
+        env.events().publish((symbol_short!("cancel"), parent, student), (asset, refund_amt));
+        Ok(refund_amt)
+    }
+
     /// Parent flags the escrow as disputed, freezing releases.
     pub fn dispute(
         env: Env,
