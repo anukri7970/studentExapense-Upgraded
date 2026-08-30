@@ -159,6 +159,11 @@ impl SendFunds {
         let client = token::Client::new(&env, &asset);
         client.transfer(&env.current_contract_address(), &student, &amount);
 
+        
+        if current_val.balance < 500_000_000 {
+            env.events().publish((symbol_short!("low_bal"), parent.clone(), student.clone()), (current_val.balance,));
+        }
+
         env.events().publish(
             (symbol_short!("release"), parent, student),
             (asset, amount, current_val.balance, category),
