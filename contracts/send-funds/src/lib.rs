@@ -58,25 +58,67 @@ pub struct SendFunds;
 impl SendFunds {
     /// Parent deposits `amount` of `asset` into escrow for `student`.
 
-    pub fn student_fund(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn student_fund(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn parents_fund(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn parents_fund(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn university_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn university_fees(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn college_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn college_fees(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn hostel_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn hostel_fees(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn mess_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn mess_fees(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
-    pub fn exam_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+    pub fn exam_fees(
+        env: Env,
+        parent: Address,
+        student: Address,
+        asset: Address,
+        amount: i128,
+    ) -> Result<i128, ContractError> {
         Self::deposit(env, parent, student, asset, amount)
     }
 
@@ -182,9 +224,11 @@ impl SendFunds {
         let client = token::Client::new(&env, &asset);
         client.transfer(&env.current_contract_address(), &student, &amount);
 
-        
         if current_val.balance < 500_000_000 {
-            env.events().publish((symbol_short!("low_bal"), parent.clone(), student.clone()), (current_val.balance,));
+            env.events().publish(
+                (symbol_short!("low_bal"), parent.clone(), student.clone()),
+                (current_val.balance,),
+            );
         }
 
         env.events().publish(
@@ -245,7 +289,6 @@ impl SendFunds {
 
         Ok(current_val.balance)
     }
-
 
     /// Parent pauses the escrow, freezing releases.
     pub fn pause(
@@ -321,7 +364,6 @@ impl SendFunds {
         Ok(())
     }
 
-
     /// Parent can cancel the escrow immediately and get all funds back.
     pub fn cancel_escrow(
         env: Env,
@@ -330,17 +372,33 @@ impl SendFunds {
         asset: Address,
     ) -> Result<i128, ContractError> {
         parent.require_auth();
-        let key = EscrowKey { parent: parent.clone(), student: student.clone(), asset: asset.clone() };
-        let mut current_val = env.storage().persistent().get::<_, EscrowValue>(&key).unwrap_or(EscrowValue { balance: 0, disputed: false, is_paused: false });
+        let key = EscrowKey {
+            parent: parent.clone(),
+            student: student.clone(),
+            asset: asset.clone(),
+        };
+        let mut current_val = env
+            .storage()
+            .persistent()
+            .get::<_, EscrowValue>(&key)
+            .unwrap_or(EscrowValue {
+                balance: 0,
+                disputed: false,
+                is_paused: false,
+            });
         let refund_amt = current_val.balance;
         current_val.balance = 0;
         env.storage().persistent().set(&key, &current_val);
         let client = token::Client::new(&env, &asset);
-        if refund_amt > 0 { client.transfer(&env.current_contract_address(), &parent, &refund_amt); }
-        env.events().publish((symbol_short!("cancel"), parent, student), (asset, refund_amt));
+        if refund_amt > 0 {
+            client.transfer(&env.current_contract_address(), &parent, &refund_amt);
+        }
+        env.events().publish(
+            (symbol_short!("cancel"), parent, student),
+            (asset, refund_amt),
+        );
         Ok(refund_amt)
     }
-
 
     pub fn set_limit(env: Env, parent: Address, student: Address, limit: i128) {
         parent.require_auth();

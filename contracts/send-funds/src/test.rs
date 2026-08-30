@@ -39,7 +39,13 @@ fn deposit_then_release_full_amount() {
     let queried = client.get_balance(&parent, &student, &asset);
     assert_eq!(queried, 500);
 
-    let remaining = client.release(&parent, &student, &asset, &500, &soroban_sdk::String::from_str(&env, "Food"));
+    let remaining = client.release(
+        &parent,
+        &student,
+        &asset,
+        &500,
+        &soroban_sdk::String::from_str(&env, "Food"),
+    );
     assert_eq!(remaining, 0);
     assert_eq!(token_client.balance(&student), 500);
     assert_eq!(token_client.balance(&contract_id), 0);
@@ -60,7 +66,13 @@ fn partial_release_keeps_remainder_escrowed() {
     asset_client.mint(&parent, &1_000);
     client.deposit(&parent, &student, &asset, &300);
 
-    let remaining = client.release(&parent, &student, &asset, &120, &soroban_sdk::String::from_str(&env, "Food"));
+    let remaining = client.release(
+        &parent,
+        &student,
+        &asset,
+        &120,
+        &soroban_sdk::String::from_str(&env, "Food"),
+    );
     assert_eq!(remaining, 180);
     assert_eq!(token_client.balance(&student), 120);
     assert_eq!(client.get_balance(&parent, &student, &asset), 180);
@@ -100,7 +112,13 @@ fn release_more_than_balance_fails() {
     asset_client.mint(&parent, &1_000);
     client.deposit(&parent, &student, &asset, &100);
 
-    let result = client.try_release(&parent, &student, &asset, &500, &soroban_sdk::String::from_str(&env, "Food"));
+    let result = client.try_release(
+        &parent,
+        &student,
+        &asset,
+        &500,
+        &soroban_sdk::String::from_str(&env, "Food"),
+    );
     assert_eq!(result, Err(Ok(ContractError::InsufficientBalance)));
 }
 
@@ -191,14 +209,31 @@ fn dispute_and_resolve() {
     assert_eq!(client.is_disputed(&parent, &student, &asset), true);
 
     // Release should fail during dispute
-    let result = client.try_release(&parent, &student, &asset, &50, &soroban_sdk::String::from_str(&env, "Food"));
+    let result = client.try_release(
+        &parent,
+        &student,
+        &asset,
+        &50,
+        &soroban_sdk::String::from_str(&env, "Food"),
+    );
     assert_eq!(result, Err(Ok(ContractError::Disputed)));
 
-    client.resolve(&parent, &student, &asset, &soroban_sdk::String::from_str(&env, "resolved"));
+    client.resolve(
+        &parent,
+        &student,
+        &asset,
+        &soroban_sdk::String::from_str(&env, "resolved"),
+    );
     assert_eq!(client.is_disputed(&parent, &student, &asset), false);
 
     // Release should succeed now
-    let remaining = client.release(&parent, &student, &asset, &50, &soroban_sdk::String::from_str(&env, "Food"));
+    let remaining = client.release(
+        &parent,
+        &student,
+        &asset,
+        &50,
+        &soroban_sdk::String::from_str(&env, "Food"),
+    );
     assert_eq!(remaining, 50);
 }
 
