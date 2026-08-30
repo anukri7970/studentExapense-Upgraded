@@ -101,6 +101,10 @@ contracts/  Soroban (Rust) — the SendFunds escrow contract + tests
 
 ---
 
+### Explorer Proof
+- **Stellar Expert Contract View**:
+  ![Explorer Proof](screenshots/explorer_proof.png)
+
 ## 8. User Growth Metrics (Level 4)
 
 - **Total Users Onboarded**: 15+
@@ -147,10 +151,6 @@ Based on feedback from our early pilot cohort, we identified and implemented the
 
 
 ---
-
-### Explorer Proof
-- **Stellar Expert Contract View**:
-  ![Explorer Proof](screenshots/explorer_proof.png)
 
 ## 10. Onchain Proof of Wallet Interactions
 
