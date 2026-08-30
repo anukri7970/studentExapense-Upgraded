@@ -22,8 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
       - name: Lint
+        # Enforce strict linting without swallowing failures
         run: npm run lint
       - name: Build
+        # Enforce build passing without swallowing failures
         run: npm run build
         env:
           NEXT_PUBLIC_API_URL: http://localhost:5000
@@ -44,18 +46,31 @@ jobs:
         run: npm ci || npm install
 
   smart-contracts:
-    name: Soroban Contracts Build & Test
+    name: Soroban Contracts Build, Test & Lint
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./contracts/send-funds
     steps:
       - uses: actions/checkout@v4
+      
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
+          components: rustfmt, clippy
+          
+      - name: Check Formatting
+        # Blocking check: fails if code is not properly formatted
+        run: cargo fmt -- --check
+        
+      - name: Lint with Clippy
+        # Blocking check: fails on any warnings
+        run: cargo clippy -- -D warnings
+        
       - name: Run Tests
+        # Blocking check: fails if any test fails
         run: cargo test
+        
       - name: Build Contract
         run: cargo build --target wasm32-unknown-unknown --release

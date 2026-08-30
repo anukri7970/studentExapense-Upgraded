@@ -57,6 +57,29 @@ pub struct SendFunds;
 #[contractimpl]
 impl SendFunds {
     /// Parent deposits `amount` of `asset` into escrow for `student`.
+
+    pub fn student_fund(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn parents_fund(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn university_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn college_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn hostel_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn mess_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+    pub fn exam_fees(env: Env, parent: Address, student: Address, asset: Address, amount: i128) -> Result<i128, ContractError> {
+        Self::deposit(env, parent, student, asset, amount)
+    }
+
     pub fn deposit(
         env: Env,
         parent: Address,
