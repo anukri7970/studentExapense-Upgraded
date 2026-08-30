@@ -148,27 +148,31 @@ Based on feedback from our early pilot cohort, we identified and implemented the
 
 ---
 
+### Explorer Proof
+- **Stellar Expert Contract View**:
+  ![Explorer Proof](screenshots/explorer_proof.png)
+
 ## 10. Onchain Proof of Wallet Interactions
 
 Below is the verified ledger of 15 real testnet transactions, showing parent deposits, student withdrawals, and tuition payments:
 
-| # | Wallet Address | Amount | Transaction Link |
+| # | Name | Wallet Address | Transaction Link |
 |---|---|---|---|
-| 1 | GBYC4FYEHK65MMJITMSMCXDZJA2YTT37PA4COXI2CXFFCWR3U4JFQUNR | 100 XLM | [https://stellar.expert/explorer/testnet/tx/9189b34afbc1192014ba90154005388e26551985e80e5f128fdbbf1717c6e256](https://stellar.expert/explorer/testnet/tx/9189b34afbc1192014ba90154005388e26551985e80e5f128fdbbf1717c6e256) |
-| 2 | GCJXLB4FDC6BHBPBVWKPEYRUCHACQJPX75UYFVVK3VEUT7YLJSC2BOXD | 117 XLM | [https://stellar.expert/explorer/testnet/tx/93453a77d62804cfeb64880cce35a33bdf1fbdd9701b54d145a4fdbd9248e20e](https://stellar.expert/explorer/testnet/tx/93453a77d62804cfeb64880cce35a33bdf1fbdd9701b54d145a4fdbd9248e20e) |
-| 3 | GD4GD3GGRL5JHQGTOPQVUND3OJBHKDQKLW56RGCNKNLQWGEKCDTL4UXM | 134 XLM | [https://stellar.expert/explorer/testnet/tx/3201d3d719ac74160bc45b0c3b74f2ab7cf9a9968b2be2ae9c1a506ea2f5f948](https://stellar.expert/explorer/testnet/tx/3201d3d719ac74160bc45b0c3b74f2ab7cf9a9968b2be2ae9c1a506ea2f5f948) |
-| 4 | GBTTXTYZC6T6N7AFWL6A4RE3ZBNQDNJFAIMVHZWKY64AP7QUCBOESONY | 151 XLM | [https://stellar.expert/explorer/testnet/tx/97789ae7ec5136aeba8d05e87b6a7dc9d2ffeea4f0367baacb5d90db0939f0bd](https://stellar.expert/explorer/testnet/tx/97789ae7ec5136aeba8d05e87b6a7dc9d2ffeea4f0367baacb5d90db0939f0bd) |
-| 5 | GBSRIXJJ5KHXPHW3SL43FSYZF67LMPAA3CLT33UIBM4DD4AQGBJ2AAJY | 168 XLM | [https://stellar.expert/explorer/testnet/tx/d339e1e1d140cdfa2b9a0d192a794a7576ffb26aa231815173439a56c294c935](https://stellar.expert/explorer/testnet/tx/d339e1e1d140cdfa2b9a0d192a794a7576ffb26aa231815173439a56c294c935) |
-| 6 | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | 185 XLM | [https://stellar.expert/explorer/testnet/tx/0665e33f2ec3de1d14d170844b972bbebe4200c90d999257f2719b0c8b42eb44](https://stellar.expert/explorer/testnet/tx/0665e33f2ec3de1d14d170844b972bbebe4200c90d999257f2719b0c8b42eb44) |
-| 7 | GDVGEANJKZ6PATGIEJYFL3SIHUG4UEFPFIWL4SWA54YYKBDZ2ZREKKAW | 202 XLM | [https://stellar.expert/explorer/testnet/tx/7693f4e92245e1fc3a05670ee82ddb9bbb6d4430fb1c17b7e53cde0703cf56a5](https://stellar.expert/explorer/testnet/tx/7693f4e92245e1fc3a05670ee82ddb9bbb6d4430fb1c17b7e53cde0703cf56a5) |
-| 8 | GA43TYO2HJ3C7BQL65HVGUJE3DQC6GANAKOD7IUUKORWQPOSPF57XF5Y | 219 XLM | [https://stellar.expert/explorer/testnet/tx/027c70a1f8648812a517d69baa26d09d8ee36c0e02097492520eaeef5bcfef43](https://stellar.expert/explorer/testnet/tx/027c70a1f8648812a517d69baa26d09d8ee36c0e02097492520eaeef5bcfef43) |
-| 9 | GDCW4EMRDG6XHMIDARGEE6HO6GMXHGP5BEPODRFNT4WJJIPDA5BKJPWV | 236 XLM | [https://stellar.expert/explorer/testnet/tx/92d9597db1456d0c951c3488cafe5b1a82e3a493528d086c83605fd024d330f9](https://stellar.expert/explorer/testnet/tx/92d9597db1456d0c951c3488cafe5b1a82e3a493528d086c83605fd024d330f9) |
-| 10 | GCXLFK7J6HPWKNC7WZMAAXOYNLBNVZN5RKZFY72O6QD3VPR75V3REONO | 253 XLM | [https://stellar.expert/explorer/testnet/tx/11e3aca29d283774e326e36ee4cb79692fb6e651e138fb46781daf1a4f262414](https://stellar.expert/explorer/testnet/tx/11e3aca29d283774e326e36ee4cb79692fb6e651e138fb46781daf1a4f262414) |
-| 11 | GDLFDODWAZ4VBLQPZTVCZUYMBTDFXEAIGBOEQVY2A7RD43FPKC76KQF2 | 270 XLM | [https://stellar.expert/explorer/testnet/tx/96a0866708ec07dff61df542d1e4a16cf23eaa8d6dac96b8cc87a58ddbce7d6f](https://stellar.expert/explorer/testnet/tx/96a0866708ec07dff61df542d1e4a16cf23eaa8d6dac96b8cc87a58ddbce7d6f) |
-| 12 | GA76C36OPSVHNVT3A2CHK6JLJZEJJF3H5PX5VZKHIGLQMTVOY4N3VQRG | 287 XLM | [https://stellar.expert/explorer/testnet/tx/2a637a2d31e3b2442508436781e1f9c079ee172b27a0263ec6001957fad03cce](https://stellar.expert/explorer/testnet/tx/2a637a2d31e3b2442508436781e1f9c079ee172b27a0263ec6001957fad03cce) |
-| 13 | GAGL2NCWNZQGU3C6MLQVJWMPQYVKPMW7ZJ4JL53NZ6GC3X4EFTSHZVRB | 304 XLM | [https://stellar.expert/explorer/testnet/tx/51280f6f62dceaffe37aebda16101913b883a0ee2ad1594e0e8d98aa865d8a5d](https://stellar.expert/explorer/testnet/tx/51280f6f62dceaffe37aebda16101913b883a0ee2ad1594e0e8d98aa865d8a5d) |
-| 14 | GBSNS35EEP2XSCKR7DLNQ5OJY6JGXEMKBRX34EFSKTBDF2AH2GZMOHML | 321 XLM | [https://stellar.expert/explorer/testnet/tx/67bc6f4a66f5d21645fc01066d34b1d2601483ab512732f0bff064e3ce26fa57](https://stellar.expert/explorer/testnet/tx/67bc6f4a66f5d21645fc01066d34b1d2601483ab512732f0bff064e3ce26fa57) |
-| 15 | GAP6ZDDWZISX4QBVIG6K3WSQIE64JL3AQ6KOABV6LUJWSPUFS67N5323 | 338 XLM | [https://stellar.expert/explorer/testnet/tx/6e7ac70ea1ad109d613006e72b0acceb4a9988bbb79d7d610ecbf5a37d3a435a](https://stellar.expert/explorer/testnet/tx/6e7ac70ea1ad109d613006e72b0acceb4a9988bbb79d7d610ecbf5a37d3a435a) |
+| 1 | Akash Mondal | GBYC4FYEHK65MMJITMSMCXDZJA2YTT37PA4COXI2CXFFCWR3U4JFQUNR | [9189b34afbc1...](https://stellar.expert/explorer/testnet/tx/9189b34afbc1192014ba90154005388e26551985e80e5f128fdbbf1717c6e256) |
+| 2 | Himanshu Jha | GCJXLB4FDC6BHBPBVWKPEYRUCHACQJPX75UYFVVK3VEUT7YLJSC2BOXD | [93453a77d628...](https://stellar.expert/explorer/testnet/tx/93453a77d62804cfeb64880cce35a33bdf1fbdd9701b54d145a4fdbd9248e20e) |
+| 3 | Ranjana Mehta | GD4GD3GGRL5JHQGTOPQVUND3OJBHKDQKLW56RGCNKNLQWGEKCDTL4UXM | [3201d3d719ac...](https://stellar.expert/explorer/testnet/tx/3201d3d719ac74160bc45b0c3b74f2ab7cf9a9968b2be2ae9c1a506ea2f5f948) |
+| 4 | Jayant Vaibhav | GBTTXTYZC6T6N7AFWL6A4RE3ZBNQDNJFAIMVHZWKY64AP7QUCBOESONY | [97789ae7ec51...](https://stellar.expert/explorer/testnet/tx/97789ae7ec5136aeba8d05e87b6a7dc9d2ffeea4f0367baacb5d90db0939f0bd) |
+| 5 | Sohbham Patil | GBSRIXJJ5KHXPHW3SL43FSYZF67LMPAA3CLT33UIBM4DD4AQGBJ2AAJY | [d339e1e1d140...](https://stellar.expert/explorer/testnet/tx/d339e1e1d140cdfa2b9a0d192a794a7576ffb26aa231815173439a56c294c935) |
+| 6 | Anu Mehta | GAIHNZ2BCDIERQEES5GEVEZ26QWRQKKEX4P63KIZEQTLZIFOM365HBUL | [0665e33f2ec3...](https://stellar.expert/explorer/testnet/tx/0665e33f2ec3de1d14d170844b972bbebe4200c90d999257f2719b0c8b42eb44) |
+| 7 | Smriti kumari | GDVGEANJKZ6PATGIEJYFL3SIHUG4UEFPFIWL4SWA54YYKBDZ2ZREKKAW | [7693f4e92245...](https://stellar.expert/explorer/testnet/tx/7693f4e92245e1fc3a05670ee82ddb9bbb6d4430fb1c17b7e53cde0703cf56a5) |
+| 8 | Simmi Tiwari | GA43TYO2HJ3C7BQL65HVGUJE3DQC6GANAKOD7IUUKORWQPOSPF57XF5Y | [027c70a1f864...](https://stellar.expert/explorer/testnet/tx/027c70a1f8648812a517d69baa26d09d8ee36c0e02097492520eaeef5bcfef43) |
+| 9 | Eshan Mehra | GDCW4EMRDG6XHMIDARGEE6HO6GMXHGP5BEPODRFNT4WJJIPDA5BKJPWV | [92d9597db145...](https://stellar.expert/explorer/testnet/tx/92d9597db1456d0c951c3488cafe5b1a82e3a493528d086c83605fd024d330f9) |
+| 10 | Shan Arav | GCXLFK7J6HPWKNC7WZMAAXOYNLBNVZN5RKZFY72O6QD3VPR75V3REONO | [11e3aca29d28...](https://stellar.expert/explorer/testnet/tx/11e3aca29d283774e326e36ee4cb79692fb6e651e138fb46781daf1a4f262414) |
+| 11 | Subheksh koma | GDLFDODWAZ4VBLQPZTVCZUYMBTDFXEAIGBOEQVY2A7RD43FPKC76KQF2 | [96a0866708ec...](https://stellar.expert/explorer/testnet/tx/96a0866708ec07dff61df542d1e4a16cf23eaa8d6dac96b8cc87a58ddbce7d6f) |
+| 12 | Sara Anaya | GA76C36OPSVHNVT3A2CHK6JLJZEJJF3H5PX5VZKHIGLQMTVOY4N3VQRG | [2a637a2d31e3...](https://stellar.expert/explorer/testnet/tx/2a637a2d31e3b2442508436781e1f9c079ee172b27a0263ec6001957fad03cce) |
+| 13 | Anil Kumar | GAGL2NCWNZQGU3C6MLQVJWMPQYVKPMW7ZJ4JL53NZ6GC3X4EFTSHZVRB | [51280f6f62dc...](https://stellar.expert/explorer/testnet/tx/51280f6f62dceaffe37aebda16101913b883a0ee2ad1594e0e8d98aa865d8a5d) |
+| 14 | Sunita Gupta | GBSNS35EEP2XSCKR7DLNQ5OJY6JGXEMKBRX34EFSKTBDF2AH2GZMOHML | [67bc6f4a66f5...](https://stellar.expert/explorer/testnet/tx/67bc6f4a66f5d21645fc01066d34b1d2601483ab512732f0bff064e3ce26fa57) |
+| 15 | rakesh Sharma | GAP6ZDDWZISX4QBVIG6K3WSQIE64JL3AQ6KOABV6LUJWSPUFS67N5323 | [6e7ac70ea1ad...](https://stellar.expert/explorer/testnet/tx/6e7ac70ea1ad109d613006e72b0acceb4a9988bbb79d7d610ecbf5a37d3a435a) |
 
 
 ## 11. Future Roadmap
