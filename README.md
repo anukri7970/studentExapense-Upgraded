@@ -17,8 +17,8 @@ Built a production-ready MVP with real users, on Stellar testnet.
 ## Deployed Smart Contract Details
 
 - **Network:** Stellar Testnet
-- **Deployed Smart Contract ID:** `CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F`
-- **Explorer Link:** [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CCXB5ZJ5XLGHDS5D3ZWICRUKCBUWMC6OTZQZMZNOAMUVAGCQVTRZT57F)
+- **Deployed Smart Contract ID:** `CA2OLSVD6GV22WC2DFLXGROMMVNUTXQJFKQBL7LZO3YFG6GS24BGF4EI`
+- **Explorer Link:** [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CA2OLSVD6GV22WC2DFLXGROMMVNUTXQJFKQBL7LZO3YFG6GS24BGF4EI)
 
 ---
 ## Why this exists
@@ -52,13 +52,14 @@ numbers — never canned advice.
   Expense tracker → category breakdown → AI budget advisor
 ```
 
-- **Parent → contract**: `deposit() pulls XLM from the parent's wallet into
+- **Parent → contract**: `deposit()` pulls XLM from the parent's wallet into
   contract escrow, earmarked for one student. Requires the parent's
   signature.
-- **Contract → student**: `release() lets the student pull previously
+- **Contract → student**: `release()` lets the student pull previously
   escrowed funds into their own wallet, in full or in part. Requires the
-  student's signature — the parent cannot claw funds back once escrowed,
-  and the student cannot draw more than what's been deposited for them.
+  student's signature — the student cannot draw more than what's been deposited for them.
+- **Parent Escrow Management**: A parent can `dispute()` the escrow to temporarily freeze releases. They can `resolve()` the dispute or `refund()` the remaining unreleased balance back to their own wallet.
+- **Storage TTL Management**: The contract automatically extends the Time-To-Live (TTL) of storage entries upon interactions, keeping the escrow state alive on the Stellar network.
 - **Student → university**: a direct Stellar payment (not via escrow —
   tuition is a final destination, not something to earmark further).
 - Every leg produces a real `txHash` you can look up on
@@ -263,7 +264,7 @@ dashboards.
 
 | Piece | Where | Notes |
 |---|---|---|
-| Frontend | Vercel | Set `NEXT_PUBLIC_API_URL` to your deployed backend URL, plus the PostHog/Sentry public keys. |
+| Frontend | Vercel | Set `NEXT_PUBLIC_API_URL` to your deployed backend URL, plus the PostHog/Sentry public keys. Deployed explicitly via the standard `vercel` CLI, relying on external connection secrets. |
 | Backend | Render (or any Node host) | Set every variable from `.env.example`. `CLIENT_ORIGIN` must match your deployed frontend's origin exactly (CORS). |
 | Database | MongoDB Atlas | Free tier is enough for this MVP's scale. |
 
@@ -281,3 +282,15 @@ dashboards.
   because tuition is a final destination for funds, not something a
   university would "release" further.
 
+
+## Improvements & Feedback Integration
+
+| User Feedback | Feature Implemented | Commit Link |
+| ------------- | ------------------- | ----------- |
+| Addressed user feedback for Pause/Unpause Escrow | Pause/Unpause Escrow | [a86463b](https://github.com/anukri7970/studentExapense-Upgraded/commit/a86463b2ff436060ec09ca5eb7cef77cab366e2a) |
+| Addressed user feedback for Resolution Reason | Resolution Reason | [2016282](https://github.com/anukri7970/studentExapense-Upgraded/commit/2016282c88496d922eac89b73c5c63a04d52a7f2) |
+| Addressed user feedback for Spending Categories | Spending Categories | [1467ba7](https://github.com/anukri7970/studentExapense-Upgraded/commit/1467ba771f8f60847c181b64427eb2f3d02e399f) |
+| Addressed user feedback for Cancel Deposit | Cancel Deposit | [6b25191](https://github.com/anukri7970/studentExapense-Upgraded/commit/6b25191fea092aa7e0e2eed963d54f0122bfff19) |
+| Addressed user feedback for Low Balance Warning Event | Low Balance Warning Event | [838c393](https://github.com/anukri7970/studentExapense-Upgraded/commit/838c393d2744964fbe6da2bc3373ce840de0f9d0) |
+| Addressed user feedback for Withdrawal Limits | Withdrawal Limits | [f074905](https://github.com/anukri7970/studentExapense-Upgraded/commit/f074905a7e3a23a0f4f4d6ff0e1507361f0dfeb5) |
+| Addressed user feedback for Code Documentation for Tooltips | Code Documentation for Tooltips | [dff87fc](https://github.com/anukri7970/studentExapense-Upgraded/commit/dff87fc2d0f37d7c9d95e73ae14af98174105cbd) |
