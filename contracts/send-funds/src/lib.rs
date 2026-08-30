@@ -401,6 +401,9 @@ impl SendFunds {
     }
 
     /// Read-only: available (un-released) escrow balance.
+
+    /// @dev Retrieves the current available balance for a student's escrow.
+
     pub fn get_balance(env: Env, parent: Address, student: Address, asset: Address) -> i128 {
         let key = EscrowKey {
             parent,
